@@ -61,22 +61,42 @@ function ActivationCode({navigation, route}) {
 		} else setNum4(value);
 	}
 
+	function renderSubmit() {
+		if (num1 == '' || num2 == '' || num3 == '' || num4 == '') {
+			return (
+				<View
+					style={[styles.yellowBtn , styles.Width_95 , {
+						backgroundColor:'#ccc'
+					}]}
+				>
+					<Text style={[styles.textRegular , styles.text_White , styles.textSize_16]}>{ i18n.t('confirm') }</Text>
+				</View>
+			);
+		}
+
+		return (
+			<TouchableOpacity onPress={() => onActiveAccount()} style={[styles.yellowBtn , styles.Width_95]}>
+				<Text style={[styles.textRegular , styles.text_black , styles.textSize_16]}>{ i18n.t('confirm') }</Text>
+			</TouchableOpacity>
+		);
+	}
+
 	function onActiveAccount() {
 		const activeCode = num1 + num2 + num3 + num4;
-
-		if (activeCode == code) dispatch(activeAccount(userId, lang));
-		else {
-			Toast.show({
-				text        	: i18n.t('codeNotMatch'),
-				type			: "danger",
-				duration    	: 3000,
-				textStyle   	: {
-					color       	: "white",
-					fontFamily  	: 'sukar',
-					textAlign   	: 'center'
-				}
-			});
-		}
+		navigation.push('home')
+		// if (activeCode == code) dispatch(activeAccount(userId, lang));
+		// else {
+		// 	Toast.show({
+		// 		text        	: i18n.t('codeNotMatch'),
+		// 		type			: "danger",
+		// 		duration    	: 3000,
+		// 		textStyle   	: {
+		// 			color       	: "white",
+		// 			fontFamily  	: 'sukar',
+		// 			textAlign   	: 'center'
+		// 		}
+		// 	});
+		// }
 
 	}
 
@@ -84,17 +104,17 @@ function ActivationCode({navigation, route}) {
 		<Container>
 				<Content contentContainerStyle={[styles.bgFullWidth , styles.paddingTop_50]}>
 
-					<View style={[styles.paddingHorizontal_25 , styles.bgFullWidth, styles.marginVertical_15, styles.Width_100, styles.flexCenter]}>
+					<View style={[styles.paddingHorizontal_25 , styles.bgFullWidth, styles.Width_100, styles.flexCenter]}>
 
 						<View style={[styles.directionRowCenter , styles.Width_100]}>
 							<TouchableOpacity onPress={() => navigation.goBack()} style={[styles.directionRow , {position:'absolute' , left:0}]}>
-								<Image source={require('../../assets/images/yellow_back.png')} style={[styles.footerIcon , {marginRight:5}]} resizeMode={'contain'} />
+								<Image source={require('../../assets/images/yellow_back.png')} style={[styles.icon20 , {marginRight:5}]} resizeMode={'contain'} />
 								<Text style={[styles.textRegular , styles.text_yellow , styles.textSize_16]}>{ i18n.t('editNum') }</Text>
 							</TouchableOpacity>
 							<Text style={[styles.textRegular , styles.text_black  , styles.textSize_16, {textAlign: 'center'}]}>{ i18n.t('activateCode') }</Text>
 						</View>
 
-						<Image source={require('../../assets/images/lock.png')} style={[styles.icImg , styles.marginVertical_35]} resizeMode={'contain'} />
+						<Image source={require('../../assets/images/lock.png')} style={[styles.icon80 , styles.marginVertical_35]} resizeMode={'contain'} />
 
 						<Text style={[styles.textRegular , styles.text_light_gray  , styles.textSize_16, styles.marginBottom_5
 							, {textAlign: 'center'}]}>{ i18n.t('codeSent') }</Text>
@@ -148,9 +168,9 @@ function ActivationCode({navigation, route}) {
 									</View>
 								</View>
 
-								<TouchableOpacity onPress={() => onActiveAccount()} style={[styles.yellowBtn , styles.Width_95]}>
-									<Text style={[styles.textRegular , styles.text_black , styles.textSize_16]}>{ i18n.t('confirm') }</Text>
-								</TouchableOpacity>
+								{
+									renderSubmit()
+								}
 								<View style={[styles.directionRowCenter , styles.Width_85 , styles.marginVertical_25]}>
 									<TouchableOpacity>
 										<Text style={[styles.textRegular , styles.text_gray  , styles.textSize_16 , styles.textDecoration]}>{ i18n.t('callMe') }</Text>

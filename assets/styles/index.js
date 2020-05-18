@@ -596,112 +596,58 @@ const styles = ({
 
     // Style Img Logo
 
-    logo : {
+    icon150 : {
         width               : 150,
         height              : 150,
-        resizeMode          :  "contain"
     },
-    iconImg : {
+    icon200 : {
+        width               : 200,
+        height              : 200,
+    },
+    icon50 : {
         width               : 50,
         height              : 50,
-        resizeMode          :  "contain"
     },
-    footerIcon : {
+    icon20 : {
         width               : 20,
         height              : 20,
-        resizeMode          :  "contain"
     },
     icon15 : {
         width               : 15,
         height              : 15,
-        resizeMode          :  "contain"
     },
-    box : {
-        width               : 12,
-        height              : 17,
-    },
-    footerIconProfile : {
+    icon33 : {
         width               : 33,
         height              : 33,
-        resizeMode          :  "contain"
     },
-    scrollImg : {
+    icon70 : {
         width               : 70,
         height              : 70,
-        marginBottom        :10,
-        borderRadius        :10,
     },
-    flatImg : {
+    icon100 : {
         width               : 100,
         height              : 100,
-        marginBottom        :10,
-        borderRadius        :10,
     },
-    scrollRatedImg : {
-        width               : 150,
-        height              : 190,
-        borderRadius        :10,
-    },
-    icImg : {
+    icon80 : {
         width               : 80,
         height              : 80,
-        resizeMode          : "cover"
     },
-    sizeImage : {
-        width               : 150,
-        height              : 150,
-        resizeMode          : 'contain'
-    },
-    upImage : {
+    icon250 : {
         width               : 250,
         height              : 250,
-        resizeMode          : 'contain'
     },
-    minImage : {
+    icon130 : {
         width               : 130,
         height              : 130,
-        resizeMode          : 'contain'
     },
-    icoImage : {
-        width               : 200,
-        height              : 100,
-        resizeMode          : 'contain'
-    },
-    smImage : {
-        width               : 20,
-        height              : 20,
-        resizeMode          : 'contain'
-    },
-    favImage : {
-        width               : 15,
-        height              : 15,
-        resizeMode          : 'contain'
-    },
-    ionImage : {
-        width               : 20,
-        height              : 20,
-        resizeMode          : 'contain'
-    },
-    arrow : {
+    icon25 : {
         width               : 25,
         height              : 25,
-        resizeMode          : 'contain'
     },
-    iconBank : {
+    icon35 : {
         width               : 35,
         height              : 35,
         resizeMode          : 'contain'
-    },
-    mark : {
-        width               : 43,
-        height              : 43,
-        resizeMode          : 'contain'
-    },
-    flowersImg : {
-        width               : 370,
-        height              : 370,
-        right               :0,
-        top                 :-7
     },
 
     //  Style Header
@@ -1098,6 +1044,10 @@ const styles = ({
         borderWidth           : 1,
         borderColor           : COLORS.gray,
     },
+    borderGray : {
+        borderWidth           : 1,
+        borderColor           : COLORS.light_gray,
+    },
     scrollView: {
         flexDirection       : 'row',
         alignSelf           : 'flex-start',
@@ -1148,11 +1098,20 @@ const styles = ({
     },
     footerStyle:{
         backgroundColor:'#fff',
-        borderRadius:10,
-        width:'70%' ,
-        position:'absolute',
-        bottom:20,
-        left:'15%'
+        height:60,
+        paddingHorizontal:15,
+    },
+    activeTab : {
+        paddingVertical:10 ,
+        paddingHorizontal      : 7,
+        backgroundColor:COLORS.lightYellow,
+        borderRadius:20
+    },
+    unActiveTab : {
+        paddingVertical:10 ,
+        paddingHorizontal      : 7,
+        backgroundColor:'transparent',
+        borderRadius:20
     },
     notiCard:{
         borderRadius: 10,

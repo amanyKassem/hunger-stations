@@ -128,7 +128,7 @@ function Login({navigation}) {
             {renderLoader()}
                 <Content contentContainerStyle={[styles.bgFullWidth , styles.paddingTop_50]}>
 
-                    <View style={[styles.paddingHorizontal_25 , styles.bgFullWidth, styles.marginVertical_15, styles.Width_100, styles.flexCenter]}>
+                    <View style={[styles.paddingHorizontal_25 , styles.bgFullWidth, styles.Width_100, styles.flexCenter]}>
 
                        <View style={[styles.directionRowCenter , styles.Width_100]}>
                            <TouchableOpacity style={{position:'absolute' , left:0}}>
@@ -137,7 +137,7 @@ function Login({navigation}) {
                            <Text style={[styles.textRegular , styles.text_black  , styles.textSize_16, {textAlign: 'center'}]}>{ i18n.t('verifyNumber') }</Text>
                        </View>
 
-                        <Image source={require('../../assets/images/confirm_user.png')} style={[styles.icImg , styles.marginVertical_35]} resizeMode={'contain'} />
+                        <Image source={require('../../assets/images/confirm_user.png')} style={[styles.icon80 , styles.marginVertical_35]} resizeMode={'contain'} />
 
                         <Text style={[styles.textRegular , styles.text_light_gray  , styles.textSize_16, styles.marginBottom_25
                             , {textAlign: 'center'}]}>{ i18n.t('afterAct') }</Text>

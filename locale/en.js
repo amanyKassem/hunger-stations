@@ -139,6 +139,17 @@ const en = {
     'callMe'                    : 'Call me',
     'resendAct'                 : 'Resend the activation code',
     'or'                        : 'or',
+    'selectTo'                  : 'Delivery to select',
+    'appLoc'                    : 'The application will use your location to view the stores nearest to you',
+    'allowAccess'               : 'Allow access to the location',
+    'manuallyLoc'               : 'Manually locate',
+    'home'                      : 'Home',
+    'myOrders'                  : 'My orders',
+    'deliveryTo'                : 'Delivery to',
+    'newLoc'                    : 'New location',
+    'selectLoc'                 : 'Select location',
+    'desc'                      : 'Description',
+    'saveLoc'                   : 'Save the location for later use',
 };
 
 export default en;
