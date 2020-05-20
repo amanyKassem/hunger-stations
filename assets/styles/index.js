@@ -321,6 +321,9 @@ const styles = ({
     bg_yellow : {
         backgroundColor     : COLORS.yellow
     },
+    bg_lightYellow : {
+        backgroundColor     : COLORS.lightYellow
+    },
 
     bg_pink : {
         backgroundColor     : '#E873B1'
@@ -581,6 +584,9 @@ const styles = ({
     height_200 : {
         height              : 200
     },
+    height_230 : {
+        height              : 230
+    },
     height_250 : {
         height              : 250
     },
@@ -596,6 +602,10 @@ const styles = ({
 
     // Style Img Logo
 
+    icon15 : {
+        width               : 15,
+        height              : 15,
+    },
     icon150 : {
         width               : 150,
         height              : 150,
@@ -619,6 +629,10 @@ const styles = ({
     icon33 : {
         width               : 33,
         height              : 33,
+    },
+    icon60 : {
+        width               : 60,
+        height              : 60,
     },
     icon70 : {
         width               : 70,
@@ -850,8 +864,8 @@ const styles = ({
         width:'100%' ,
         zIndex:-1
     },
-    swiperOverlay:{
-        backgroundColor: "rgba(0, 0, 0, 0.6)" ,
+    imgOverLay:{
+        backgroundColor: "rgba(95, 78, 75, 0.5)" ,
         position:'absolute',
         height:'100%' ,
         width:'100%' ,
@@ -1072,6 +1086,32 @@ const styles = ({
         width:'100%',
         borderTopRightRadius: 10,
         borderTopLeftRadius: 10,
+    },
+    scrollCat : {
+        marginRight:10,
+        width: 80,
+        height: 115,
+        justifyContent:'flex-end',
+        paddingBottom:5
+    },
+    scrollImg : {
+        width               : '100%',
+        height              : '100%',
+        marginBottom        :10,
+        borderRadius        :10,
+        position            :'absolute'
+    },
+    activeTabs : {
+        backgroundColor     : COLORS.yellow,
+        paddingVertical:7,
+        paddingHorizontal:7,
+        borderRadius:5
+    },
+    noActiveTabs : {
+        backgroundColor     : 'transparent',
+        paddingVertical:7,
+        paddingHorizontal:7,
+        borderRadius:5
     },
     touchFav: {
         backgroundColor:'#fff',

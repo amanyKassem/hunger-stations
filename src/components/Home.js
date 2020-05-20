@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import {View, Text, Image, TouchableOpacity, Dimensions} from "react-native";
 import {Container, Content, Card, Label, Textarea} from 'native-base'
 import styles from '../../assets/styles'
@@ -10,13 +10,25 @@ const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 const isIOS = Platform.OS === 'ios';
 
-function Home({navigation}) {
+function Home({navigation , route}) {
 
     const [showModal, setShowModal] = useState(false);
+    const [cityName, setCityName] = useState('');
+
 
     function toggleModal () {
         setShowModal(!showModal);
     };
+
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            if (route.params?.cityName) {
+                setCityName(route.params.cityName.substr(0,25))
+            }
+        });
+
+        return unsubscribe;
+    }, [navigation , route.params?.cityName]);
 
 
     function navToLocation (latitude , longitude) {
@@ -38,22 +50,50 @@ function Home({navigation}) {
                            <View style={[styles.directionRow]}>
                                <Image source={require('../../assets/images/location.png')} style={[styles.icon15]} resizeMode={'contain'} />
                                <Text style={[styles.textRegular , styles.text_light_gray , styles.textSize_14 , styles.marginHorizontal_5]}>|</Text>
-                               <Text style={[styles.textRegular , styles.text_light_gray , styles.textSize_14]}>{ i18n.t('selectTo') }</Text>
+                               <Text style={[styles.textRegular , styles.text_light_gray , styles.textSize_14]}>{ i18n.t('deliveryTo') } {cityName}</Text>
                            </View>
                            <Image source={require('../../assets/images/dropdown.png')} style={[styles.icon15]} resizeMode={'contain'} />
                        </Card>
                    </TouchableOpacity>
+                    {
+                        cityName === '' ?
+                            <View style={[styles.directionColumnCenter]}>
+                                <Image source={require('../../assets/images/map.png')} style={[styles.icon200]} resizeMode={'contain'} />
+                                <Text style={[styles.textBold , styles.text_gray , styles.textSize_20 , {textAlign:'center'}]}>{ i18n.t('appLoc') }</Text>
+                                <TouchableOpacity onPress={() => navigation.push("getLocation" , {latitude:null , longitude:null})} style={[styles.yellowBtn , styles.Width_95 , styles.marginBottom_15]}>
+                                    <Text style={[styles.textRegular , styles.text_black , styles.textSize_16]}>{ i18n.t('manuallyLoc') }</Text>
+                                </TouchableOpacity>
+                                {/*<Text style={[styles.textRegular , styles.text_black  , styles.textSize_16 , styles.textDecoration]}>{ i18n.t('manuallyLoc') }</Text>*/}
+                            </View>
+                            :
+                            <View>
+                                <View style={[styles.Radius_20 , styles.marginBottom_20 , {overflow:'hidden'}]}>
+                                    <Image source={require('../../assets/images/2.png')} style={[styles.Radius_20 , styles.Width_100 , styles.height_230]} resizeMode={'cover'} />
+                                    <View style={[styles.imgOverLay , styles.paddingHorizontal_20 , {justifyContent:'flex-end'}]}>
+                                        <Text style={[styles.textBold , styles.text_White , styles.textSize_18 , styles.marginBottom_5]}>{ i18n.t('stayHome') }</Text>
+                                        <Text style={[styles.textRegular , styles.text_White , styles.textSize_16]}>اكلك مقاضيك وطلبات الصيدلية توصلك لبابك</Text>
+                                        <TouchableOpacity onPress={ () => navigation.push('locationProduct')} style={[styles.yellowBtn , styles.Width_100 , styles.marginBottom_15 , {alignSelf:'center'}]}>
+                                            <Text style={[styles.textRegular , styles.text_black , styles.textSize_16]}>{ i18n.t('orderNow') }</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                                <View style={[styles.Radius_20 , styles.marginBottom_20 , {overflow:'hidden'}]}>
+                                    <Image source={require('../../assets/images/3.png')} style={[styles.Radius_20 , styles.Width_100 , styles.height_230]} resizeMode={'cover'} />
+                                    <View style={[styles.imgOverLay , styles.paddingHorizontal_20 , {justifyContent:'flex-end'}]}>
+                                        <Text style={[styles.textBold , styles.text_White , styles.textSize_18 , styles.marginBottom_5]}>{ i18n.t('stayHome') }</Text>
+                                        <Text style={[styles.textRegular , styles.text_White , styles.textSize_16]}>اكلك مقاضيك وطلبات الصيدلية توصلك لبابك</Text>
+                                        <TouchableOpacity onPress={ () => navigation.push('locationProduct')} style={[styles.yellowBtn , styles.Width_100 , styles.marginBottom_15 , {alignSelf:'center' , backgroundColor:'#fff'}]}>
+                                            <Text style={[styles.textRegular , styles.text_black , styles.textSize_16]}>{ i18n.t('orderNow') }</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </View>
+                    }
 
-                    <View style={[styles.directionColumnCenter]}>
-                        <Image source={require('../../assets/images/map.png')} style={[styles.icon200]} resizeMode={'contain'} />
-                        <Text style={[styles.textBold , styles.text_gray , styles.textSize_20 , {textAlign:'center'}]}>{ i18n.t('appLoc') }</Text>
-                        <TouchableOpacity style={[styles.yellowBtn , styles.Width_95 , styles.marginBottom_15]}>
-                            <Text style={[styles.textRegular , styles.text_black , styles.textSize_16]}>{ i18n.t('manuallyLoc') }</Text>
-                        </TouchableOpacity>
-                        {/*<Text style={[styles.textRegular , styles.text_black  , styles.textSize_16 , styles.textDecoration]}>{ i18n.t('manuallyLoc') }</Text>*/}
-                    </View>
 
                 </View>
+
+
                 <Modal
                     onBackdropPress                 ={toggleModal}
                     onBackButtonPress               = {toggleModal}

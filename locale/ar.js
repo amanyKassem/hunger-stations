@@ -150,6 +150,8 @@ const ar = {
     'selectLoc'                 : 'اختر الموقع',
     'desc'                      : 'الوصف',
     'saveLoc'                   : 'حفظ الموقع لاستخدامه لاحقا',
+    'stayHome'                  : '#خليك_بالبيت',
+    'orderNow'                  : 'اطلب الحين',
 };
 
 export default ar;

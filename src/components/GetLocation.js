@@ -92,8 +92,13 @@ function GetLocation({navigation, route}) {
         }
     };
     function getLoc(){
-        console.log("mapRegion button" ,mapRegion)
-        console.log("city3 " , city)
+        console.log("mapRegion button" ,mapRegion);
+        console.log("city3 " , city);
+        navigation.navigate('home', { cityName:city });
+        navigation.navigate('home', {
+            screen: 'home',
+            params: { cityName:city },
+        })
     }
     return (
         <Container>

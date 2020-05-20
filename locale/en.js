@@ -150,6 +150,8 @@ const en = {
     'selectLoc'                 : 'Select location',
     'desc'                      : 'Description',
     'saveLoc'                   : 'Save the location for later use',
+    'stayHome'                  : '#Stay_home',
+    'orderNow'                  : 'Order now',
 };
 
 export default en;
