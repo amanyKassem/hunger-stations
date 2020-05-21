@@ -1,6 +1,6 @@
 import React, { useState , useEffect , useRef } from "react";
 import {View, Text, Image, TouchableOpacity, ScrollView, Dimensions , I18nManager , ActivityIndicator} from "react-native";
-import {Container, Content, Card} from 'native-base'
+import {Container, Content, Card, Input} from 'native-base'
 import styles from '../../assets/styles'
 import i18n from "../../locale/i18n";
 import COLORS from "../consts/colors";
@@ -13,6 +13,8 @@ const isIOS = Platform.OS === 'ios';
 function LocationProduct({navigation}) {
 
     const [active, setActive] = useState(0);
+    const [showSearch, setShowSearch] = useState(false);
+    const [restName, setRestName] = useState('');
 
     function onSubCategories ( id ){
         setActive(id);
@@ -23,15 +25,37 @@ function LocationProduct({navigation}) {
         <Container>
             <Content contentContainerStyle={[styles.bgFullWidth]}>
                 <View style={[styles.paddingHorizontal_20 , styles.bgFullWidth, styles.Width_100]}>
-                    <View style={[styles.Width_100 , styles.directionRowSpace  , styles.paddingTop_50 ]}>
-                        <TouchableOpacity onPress={() => navigation.goBack()}>
-                            <Image source={require('../../assets/images/back.png')} style={[styles.icon20]} resizeMode={'contain'} />
-                        </TouchableOpacity>
-                        <Text style={[styles.textRegular , styles.text_black , styles.textSize_20]}>اسم المنطقة</Text>
-                        <TouchableOpacity onPress={() => navigation.goBack()}>
-                            <Image source={require('../../assets/images/search.png')} style={[styles.icon20]} resizeMode={'contain'} />
-                        </TouchableOpacity>
-                    </View>
+
+                        <View style={[styles.Width_100 , styles.directionRowSpace  , styles.paddingTop_50 ]}>
+                            {
+                                !showSearch ?
+                                    <>
+                                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                                            <Image source={require('../../assets/images/back.png')}
+                                                   style={[styles.icon20]} resizeMode={'contain'}/>
+                                        </TouchableOpacity>
+                                        <Text style={[styles.textRegular, styles.text_black, styles.textSize_18]}>اسم
+                                            المنطقة</Text>
+                                        <TouchableOpacity onPress={() => setShowSearch(true)}>
+                                            <Image source={require('../../assets/images/search.png')}
+                                                   style={[styles.icon20]} resizeMode={'contain'}/>
+                                        </TouchableOpacity>
+                                    </>
+                                    :
+                                    <View style={[styles.Width_100, styles.directionRowSpace]}>
+                                        <Input style={[styles.inputSearch, styles.bg_light_gray]}
+                                               placeholder={i18n.t('searchRest')}
+                                               placeholderStyle={[styles.text_gray]}
+                                               onChangeText={(restName) => setRestName(restName)}
+                                               value={restName}
+                                        />
+                                        <TouchableOpacity onPress={() => setShowSearch(false)}>
+                                            <Text
+                                                style={[styles.textRegular, styles.text_black, styles.textSize_14, styles.textCenter, styles.paddingHorizontal_5]}>{i18n.t('cancel')}</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                            }
+                        </View>
 
                     <View style={[styles.marginVertical_20,{borderWidth:.5 , borderColor: '#eee'}]}/>
 
@@ -85,7 +109,7 @@ function LocationProduct({navigation}) {
                                 onPress         = {() => onSubCategories(0)}
                                 style           = {[active === 0 ? styles.activeTabs : styles.noActiveTabs ,styles.directionRow, {marginRight:10}]}>
                                 <Text style={[styles.textRegular, styles.textSize_11 , styles.text_black]} >
-                                    الكل
+                                    { i18n.t('all') }
                                 </Text>
                             </TouchableOpacity>
                             <TouchableOpacity
@@ -129,7 +153,7 @@ function LocationProduct({navigation}) {
                     </View>
 
                     <View style={styles.marginVertical_20}>
-                        <TouchableOpacity style={[styles.directionRow , styles.marginBottom_10 , {borderBottomWidth:1 , borderBottomColor:'#ddd' , paddingBottom:10}]}>
+                        <TouchableOpacity onPress={() => navigation.push('category')} style={[styles.directionRow , styles.marginBottom_10 , {borderBottomWidth:1 , borderBottomColor:'#ddd' , paddingBottom:10}]}>
                             <View>
                                 <Image source= {require('../../assets/images/img2.png')} style={[styles.icon60, styles.marginBottom_10]} resizeMode={'contain'} />
                                 <View style={[styles.directionRowCenter ]}>
@@ -181,7 +205,7 @@ function LocationProduct({navigation}) {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={[styles.directionRow , styles.marginBottom_10 , {borderBottomWidth:1 , borderBottomColor:'#ddd' , paddingBottom:10}]}>
+                        <TouchableOpacity onPress={() => navigation.push('category')} style={[styles.directionRow , styles.marginBottom_10 , {borderBottomWidth:1 , borderBottomColor:'#ddd' , paddingBottom:10}]}>
                             <View>
                                 <Image source= {require('../../assets/images/img2.png')} style={[styles.icon60, styles.marginBottom_10]} resizeMode={'contain'} />
                                 <View style={[styles.directionRowCenter ]}>
@@ -233,7 +257,7 @@ function LocationProduct({navigation}) {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={[styles.directionRow , styles.marginBottom_10 , {borderBottomWidth:1 , borderBottomColor:'#ddd' , paddingBottom:10}]}>
+                        <TouchableOpacity onPress={() => navigation.push('category')} style={[styles.directionRow , styles.marginBottom_10 , {borderBottomWidth:1 , borderBottomColor:'#ddd' , paddingBottom:10}]}>
                             <View>
                                 <Image source= {require('../../assets/images/img2.png')} style={[styles.icon60, styles.marginBottom_10]} resizeMode={'contain'} />
                                 <View style={[styles.directionRowCenter ]}>
@@ -288,7 +312,6 @@ function LocationProduct({navigation}) {
                     </View>
 
                 </View>
-
             </Content>
         </Container>
     );

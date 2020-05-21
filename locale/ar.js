@@ -152,6 +152,8 @@ const ar = {
     'saveLoc'                   : 'حفظ الموقع لاستخدامه لاحقا',
     'stayHome'                  : '#خليك_بالبيت',
     'orderNow'                  : 'اطلب الحين',
+    'searchRest'                : 'ابحث عن مطعم',
+    'all'                       : 'الكل',
 };
 
 export default ar;

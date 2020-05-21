@@ -602,10 +602,6 @@ const styles = ({
 
     // Style Img Logo
 
-    icon15 : {
-        width               : 15,
-        height              : 15,
-    },
     icon150 : {
         width               : 150,
         height              : 150,
@@ -982,6 +978,17 @@ const styles = ({
         textAlign           : I18nManager.isRTL ? 'right' : 'left',
         fontFamily          : 'sukar',
         fontSize            : 15,
+    },
+    inputSearch : {
+        color               : COLORS.gray,
+        paddingRight        : 20,
+        paddingLeft         : 20,
+        textAlign           : I18nManager.isRTL ? 'right' : 'left',
+        fontFamily          : 'sukar',
+        fontSize            : 14,
+        borderRadius        :5,
+        height              :35,
+        marginRight         :15
     },
     searchInput : {
         borderRadius        : 10,

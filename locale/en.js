@@ -152,6 +152,8 @@ const en = {
     'saveLoc'                   : 'Save the location for later use',
     'stayHome'                  : '#Stay_home',
     'orderNow'                  : 'Order now',
+    'searchRest'                : 'Find a restaurant',
+    'all'                       : 'All',
 };
 
 export default en;
