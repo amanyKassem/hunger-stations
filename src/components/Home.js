@@ -1,5 +1,5 @@
 import React, { useState , useEffect} from "react";
-import {View, Text, Image, TouchableOpacity, Dimensions} from "react-native";
+import {View, Text, Image, TouchableOpacity, Dimensions , ScrollView} from "react-native";
 import {Container, Content, Card, Label, Textarea} from 'native-base'
 import styles from '../../assets/styles'
 import i18n from "../../locale/i18n";
@@ -44,7 +44,7 @@ function Home({navigation , route}) {
                     <Text style={[styles.textBold , styles.text_black , styles.textSize_20]}>Hunger station</Text>
                 </View>
 
-                <View style={[styles.paddingHorizontal_25 , styles.bgFullWidth, styles.Width_100]}>
+                <View style={[styles.paddingHorizontal_20 , styles.bgFullWidth, styles.Width_100, {paddingBottom:10}]}>
                    <TouchableOpacity onPress={toggleModal}>
                        <Card style={[styles.bg_White, styles.directionRowSpace , styles.paddingHorizontal_10 , styles.Radius_10 , {height:50 , top:-30}]}>
                            <View style={[styles.directionRow]}>
@@ -66,7 +66,7 @@ function Home({navigation , route}) {
                                 {/*<Text style={[styles.textRegular , styles.text_black  , styles.textSize_16 , styles.textDecoration]}>{ i18n.t('manuallyLoc') }</Text>*/}
                             </View>
                             :
-                            <View>
+                            <ScrollView style={{height:400}}>
                                 <View style={[styles.Radius_20 , styles.marginBottom_20 , {overflow:'hidden'}]}>
                                     <Image source={require('../../assets/images/2.png')} style={[styles.Radius_20 , styles.Width_100 , styles.height_230]} resizeMode={'cover'} />
                                     <View style={[styles.imgOverLay , styles.paddingHorizontal_20 , {justifyContent:'flex-end'}]}>
@@ -87,7 +87,7 @@ function Home({navigation , route}) {
                                         </TouchableOpacity>
                                     </View>
                                 </View>
-                            </View>
+                            </ScrollView>
                     }
 
 

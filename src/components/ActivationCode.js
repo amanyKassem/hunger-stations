@@ -104,7 +104,7 @@ function ActivationCode({navigation, route}) {
 		<Container>
 				<Content contentContainerStyle={[styles.bgFullWidth , styles.paddingTop_50]}>
 
-					<View style={[styles.paddingHorizontal_25 , styles.bgFullWidth, styles.Width_100, styles.flexCenter]}>
+					<View style={[styles.paddingHorizontal_20 , styles.bgFullWidth, styles.Width_100, styles.flexCenter]}>
 
 						<View style={[styles.directionRowCenter , styles.Width_100]}>
 							<TouchableOpacity onPress={() => navigation.goBack()} style={[styles.directionRow , {position:'absolute' , left:0}]}>

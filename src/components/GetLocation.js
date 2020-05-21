@@ -33,31 +33,30 @@ function GetLocation({navigation, route}) {
 
     const fetchData = async () => {
         let { status } = await Permissions.askAsync(Permissions.LOCATION);
+        let userLocation = {};
         if (status !== 'granted') {
             alert('صلاحيات تحديد موقعك الحالي ملغاه');
         }else {
             const { coords: { latitude, longitude } } = await Location.getCurrentPositionAsync({});
-            const userLocation = route.params.latitude == null ? { latitude, longitude , latitudeDelta , longitudeDelta}:{ latitude: route.params.latitude, longitude:route.params.longitude , latitudeDelta , longitudeDelta};
-            setInitMap(false)
-            setMapRegion(userLocation)
-            console.log("mapRegion" ,mapRegion)
-            console.log("userLocation" ,userLocation)
+            if (route.params.latitude){
+                userLocation = { latitude: route.params.latitude, longitude:route.params.longitude , latitudeDelta , longitudeDelta};
+            } else {
+                userLocation = { latitude, longitude , latitudeDelta , longitudeDelta};
+            }
+            setInitMap(false);
+            setMapRegion(userLocation);
             isIOS ? mapRef.current.animateToRegion(userLocation, 1000) : false;
         }
-
         let getCity = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
-        getCity    += mapRegion.latitude + ',' + mapRegion.longitude;
+        getCity    += userLocation.latitude + ',' + userLocation.longitude;
         getCity    += '&key=AIzaSyCJTSwkdcdRpIXp2yG7DfSRKFWxKhQdYhQ&language=ar&sensor=true';
         console.log("getCity  " , getCity)
-
         // ReactotronConfig.log(getCity);
-
         try {
             const { data } = await axios.get(getCity);
             setCity(data.results[0].formatted_address)
             console.log("city  " , data.results[0].formatted_address)
             console.log("city  " , city)
-
         } catch (e) {
             console.log(e);
         }
@@ -72,11 +71,12 @@ function GetLocation({navigation, route}) {
 
 
 
-    const _handleMapRegionChange  = async (mapRegion) =>  {
-        setMapRegion(mapRegion)
+    const _handleMapRegionChange  = async (mapCoordinate) =>  {
+
+        setMapRegion({ latitude: mapCoordinate.latitude, longitude: mapCoordinate.longitude, latitudeDelta, longitudeDelta});
 
         let getCity = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
-        getCity += mapRegion.latitude + ',' + mapRegion.longitude;
+        getCity += mapCoordinate.latitude + ',' + mapCoordinate.longitude;
         getCity += '&key=AIzaSyCJTSwkdcdRpIXp2yG7DfSRKFWxKhQdYhQ&language=ar&sensor=true';
 
         console.log('locations data', getCity);
@@ -94,7 +94,6 @@ function GetLocation({navigation, route}) {
     function getLoc(){
         console.log("mapRegion button" ,mapRegion);
         console.log("city3 " , city);
-        navigation.navigate('home', { cityName:city });
         navigation.navigate('home', {
             screen: 'home',
             params: { cityName:city },
@@ -119,7 +118,7 @@ function GetLocation({navigation, route}) {
 
                 </View>
                 {
-                    !initMap && mapRegion != null? (
+                    !initMap && mapRegion.latitude != null? (
                         <MapView
                             ref={mapRef}
                             style={{ width: '100%', height: '100%' , position:'absolute' , top:0, }}

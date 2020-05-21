@@ -844,6 +844,10 @@ const styles = ({
         flexDirection:'row',
         alignItems:'center'
     },
+    directionRowEnd:{
+        flexDirection:'row',
+        alignItems:'flex-end'
+    },
     directionRowSpace:{
         flexDirection:'row',
         justifyContent:'space-between',
@@ -854,6 +858,12 @@ const styles = ({
     },
     transformReverse:{
         transform: I18nManager.isRTL ? [{rotateY : '-180deg'}] : [{rotateY : '0deg'}]
+    },
+    productCard:{
+        marginLeft:10 ,
+        flexDirection:'column' ,
+        flex:1,
+        paddingVertical:5
     },
     swiperImg:{
         height:'100%' ,

@@ -19,7 +19,7 @@ function Offers({navigation}) {
                     <Text style={[styles.textBold , styles.text_black , styles.textSize_20]}>Hunger station</Text>
                 </View>
 
-                <View style={[styles.paddingHorizontal_25 , styles.bgFullWidth, styles.Width_100]}>
+                <View style={[styles.paddingHorizontal_20 , styles.bgFullWidth, styles.Width_100]}>
 
 
                 </View>
