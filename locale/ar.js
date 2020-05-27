@@ -154,6 +154,10 @@ const ar = {
     'orderNow'                  : 'اطلب الحين',
     'searchRest'                : 'ابحث عن مطعم',
     'all'                       : 'الكل',
+    'ok'                        : 'حسنا',
+    'productDetails'            : 'تفاصيل المنتج',
+    'add'                       : 'اضافة',
+    'viewCart'                  : 'عرض السلة',
 };
 
 export default ar;

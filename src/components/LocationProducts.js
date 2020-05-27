@@ -153,7 +153,7 @@ function LocationProduct({navigation}) {
                     </View>
 
                     <View style={styles.marginVertical_20}>
-                        <TouchableOpacity onPress={() => navigation.push('category')} style={[styles.directionRow , styles.marginBottom_10 , {borderBottomWidth:1 , borderBottomColor:'#ddd' , paddingBottom:10}]}>
+                        <TouchableOpacity onPress={() => navigation.push('category', {catType:0})} style={[styles.directionRow , styles.marginBottom_10 , {borderBottomWidth:1 , borderBottomColor:'#ddd' , paddingBottom:10}]}>
                             <View>
                                 <Image source= {require('../../assets/images/img2.png')} style={[styles.icon60, styles.marginBottom_10]} resizeMode={'contain'} />
                                 <View style={[styles.directionRowCenter ]}>
@@ -205,7 +205,7 @@ function LocationProduct({navigation}) {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.push('category')} style={[styles.directionRow , styles.marginBottom_10 , {borderBottomWidth:1 , borderBottomColor:'#ddd' , paddingBottom:10}]}>
+                        <TouchableOpacity onPress={() => navigation.push('category', {catType:1})} style={[styles.directionRow , styles.marginBottom_10 , {borderBottomWidth:1 , borderBottomColor:'#ddd' , paddingBottom:10}]}>
                             <View>
                                 <Image source= {require('../../assets/images/img2.png')} style={[styles.icon60, styles.marginBottom_10]} resizeMode={'contain'} />
                                 <View style={[styles.directionRowCenter ]}>
@@ -219,7 +219,7 @@ function LocationProduct({navigation}) {
                             <View style={{flex:1 , borderLeftWidth:1 , borderLeftColor:'#ddd' , paddingHorizontal:10 , marginLeft:10}}>
                                 <View style={[styles.directionRowSpace, styles.marginBottom_5]}>
                                     <Text style={[styles.textBold, styles.textSize_16 , styles.text_black]} >
-                                        اطعام
+                                        اطلب لهم
                                     </Text>
                                     <Text style={[styles.textRegular, styles.textSize_13 , styles.text_black , styles.bg_lightYellow , styles.paddingHorizontal_15 , styles.Radius_15, styles.paddingVertical_5]} >
                                         اعلان
@@ -257,7 +257,7 @@ function LocationProduct({navigation}) {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.push('category')} style={[styles.directionRow , styles.marginBottom_10 , {borderBottomWidth:1 , borderBottomColor:'#ddd' , paddingBottom:10}]}>
+                        <TouchableOpacity onPress={() => navigation.push('category', {catType:1})} style={[styles.directionRow , styles.marginBottom_10 , {borderBottomWidth:1 , borderBottomColor:'#ddd' , paddingBottom:10}]}>
                             <View>
                                 <Image source= {require('../../assets/images/img2.png')} style={[styles.icon60, styles.marginBottom_10]} resizeMode={'contain'} />
                                 <View style={[styles.directionRowCenter ]}>
@@ -271,7 +271,7 @@ function LocationProduct({navigation}) {
                             <View style={{flex:1 , borderLeftWidth:1 , borderLeftColor:'#ddd' , paddingHorizontal:10 , marginLeft:10}}>
                                 <View style={[styles.directionRowSpace, styles.marginBottom_5]}>
                                     <Text style={[styles.textBold, styles.textSize_16 , styles.text_black]} >
-                                        اطعام
+                                        اطلب لهم
                                     </Text>
                                     <Text style={[styles.textRegular, styles.textSize_13 , styles.text_black , styles.bg_lightYellow , styles.paddingHorizontal_15 , styles.Radius_15, styles.paddingVertical_5]} >
                                         اعلان

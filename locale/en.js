@@ -154,6 +154,10 @@ const en = {
     'orderNow'                  : 'Order now',
     'searchRest'                : 'Find a restaurant',
     'all'                       : 'All',
+    'ok'                        : 'Ok',
+    'productDetails'            : 'Product details',
+    'add'                       : 'Add',
+    'viewCart'                  : 'View cart',
 };
 
 export default en;

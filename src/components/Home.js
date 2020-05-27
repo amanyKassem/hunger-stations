@@ -1,10 +1,9 @@
 import React, { useState , useEffect} from "react";
 import {View, Text, Image, TouchableOpacity, Dimensions , ScrollView} from "react-native";
-import {Container, Content, Card, Label, Textarea} from 'native-base'
+import {Container, Content, Card} from 'native-base'
 import styles from '../../assets/styles'
 import i18n from "../../locale/i18n";
 import  Modal  from "react-native-modal";
-import COLORS from "../consts/colors";
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;

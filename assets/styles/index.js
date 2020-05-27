@@ -185,6 +185,9 @@ const styles = ({
     marginTop_35 : {
         marginTop      : 35
     },
+    marginTop_40 : {
+        marginTop      : 40
+    },
     marginTop_55 : {
         marginTop      : 55
     },
@@ -553,6 +556,9 @@ const styles = ({
     },
     height_30 : {
         height               : 30
+    },
+    height_35 : {
+        height               : 35
     },
     height_40 : {
         height               : 40
@@ -1231,6 +1237,9 @@ const styles = ({
         height:35 ,
         borderColor:'#acabae',
         borderWidth:0
+    },
+    checkbox:{
+        color:COLORS.yellow,
     },
 });
 

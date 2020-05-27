@@ -94,7 +94,7 @@ function GetLocation({navigation, route}) {
     function getLoc(){
         console.log("mapRegion button" ,mapRegion);
         console.log("city3 " , city);
-        navigation.navigate('home', {
+        navigation.navigate('tabs', {
             screen: 'home',
             params: { cityName:city },
         })
