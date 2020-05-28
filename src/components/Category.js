@@ -177,7 +177,7 @@ function Category({navigation, route}) {
 
             {
                 count ?
-                    <TouchableOpacity  style={[styles.yellowBtn , styles.Width_80 , styles.SelfCenter , styles.directionRowSpace , styles.paddingHorizontal_10,
+                    <TouchableOpacity onPress={ () => navigation.push('basket')} style={[styles.yellowBtn , styles.Width_80 , styles.SelfCenter , styles.directionRowSpace , styles.paddingHorizontal_10,
                         {position:'absolute' , zIndex:1 , bottom:40}]}>
                         <Text style={[styles.textRegular , styles.text_black , styles.textSize_14]}>{ i18n.t('viewCart') }</Text>
                         <Text style={[styles.textRegular, styles.textSize_14 , styles.text_black]} >

@@ -10,5 +10,6 @@ export default {
     lightGray       :'#9D9C9C',
     gray        :'#7A7A7A',
     black        :'#2C2C2C',
+    aqua        :'#41cec8',
 }
 

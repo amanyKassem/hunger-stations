@@ -35,6 +35,9 @@ const styles = ({
     text_gray : {
         color               : COLORS.gray
     },
+    text_aqua : {
+        color               : COLORS.aqua
+    },
     text_light_gray : {
         color               : COLORS.light_gray
     },
@@ -82,6 +85,9 @@ const styles = ({
     },
     textSize_16 : {
         fontSize            : 16,
+    },
+    textSize_17 : {
+        fontSize            : 17,
     },
     textSize_18 : {
         fontSize            : 18,
@@ -175,6 +181,9 @@ const styles = ({
     },
     marginTop_5 : {
         marginTop      : 5
+    },
+    marginTop_10 : {
+        marginTop      : 10
     },
     marginTop_15 : {
         marginTop      : 15

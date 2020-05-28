@@ -101,8 +101,8 @@ function Home({navigation , route}) {
                     avoidKeyboard                    = {true}
                 >
 
-                    <View style={[{borderTopLeftRadius:10,
-                        borderTopRightRadius:10},styles.bg_White, styles.overHidden, styles.Width_100, styles.paddingVertical_25 , styles.paddingHorizontal_10]}>
+                    <View style={[{borderTopLeftRadius:50,
+                        borderTopRightRadius:50},styles.bg_White, styles.overHidden, styles.Width_100, styles.paddingVertical_25 , styles.paddingHorizontal_25]}>
                         <Text style={[styles.textBold , styles.text_black , styles.textSize_16 , styles.marginBottom_15]}>{ i18n.t('deliveryTo') }</Text>
 
                         <TouchableOpacity onPress={() => navToLocation()} style={[styles.directionRow ,styles.borderGray , styles.Radius_5 , styles.flexCenter , styles.Width_100 , styles.paddingVertical_10]}>
