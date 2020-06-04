@@ -880,10 +880,12 @@ const styles = ({
         flex:1,
         paddingVertical:5
     },
-    swiperImg:{
+    swiperOverLay:{
         height:'100%' ,
         width:'100%' ,
-        zIndex:-1
+        zIndex:-1,
+        backgroundColor:"rgba(0, 0, 0, 0.5)",
+        position:'absolute',
     },
     imgOverLay:{
         backgroundColor: "rgba(95, 78, 75, 0.5)" ,
@@ -903,24 +905,20 @@ const styles = ({
         top:'7%'
     },
     doteStyle:{
-        backgroundColor: COLORS.gray,
+        backgroundColor: COLORS.light_gray,
         borderRadius: 5,
         left: 0,
         right:0,
-        bottom: 40,
-        width: 15,
-        height: 4,
+        bottom:170,
     },
     activeDot:{
         borderRadius: 5,
         borderWidth: 2,
-        borderColor: COLORS.orange,
-        backgroundColor: COLORS.orange,
-        width: 25,
-        height: 4,
+        borderColor: COLORS.gray,
+        backgroundColor: COLORS.gray,
         left: 0,
         right:0,
-        bottom: 40
+        bottom:170,
     },
     doteStyle2:{
         backgroundColor: COLORS.gray,
@@ -1249,6 +1247,9 @@ const styles = ({
     },
     checkbox:{
         color:COLORS.yellow,
+    },
+    tableHead: {
+        height: 50,
     },
 });
 

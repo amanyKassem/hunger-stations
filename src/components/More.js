@@ -19,7 +19,7 @@ function More({navigation}) {
                     <Text style={[styles.textBold , styles.text_black  , styles.textSize_18, {textAlign: 'center'}]}>{ i18n.t('more') }</Text>
                 </View>
 
-                <View style={[styles.paddingHorizontal_20 , styles.bgFullWidth, styles.Width_100]}>
+                <View style={[styles.paddingHorizontal_20 , styles.bgFullWidth, styles.Width_100, styles.marginTop_15]}>
 
                     <TouchableOpacity onPress={ () => navigation.push('promoCode')} style={[styles.directionRowSpace , styles.Width_100]}>
                         <View style={[styles.directionRow]}>
@@ -32,7 +32,7 @@ function More({navigation}) {
                     </TouchableOpacity>
                     <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'95%'}]}/>
 
-                    <TouchableOpacity style={[styles.directionRowSpace , styles.Width_100]}>
+                    <TouchableOpacity onPress={ () => navigation.push('account')} style={[styles.directionRowSpace , styles.Width_100]}>
                         <View style={[styles.directionRow]}>
                             <Image source={require('../../assets/images/user.png')} style={[styles.icon20 , {marginRight:10}]} resizeMode={'contain'} />
                             <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black]} >
@@ -54,7 +54,7 @@ function More({navigation}) {
                     </TouchableOpacity>
                     <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'95%'}]}/>
 
-                    <TouchableOpacity style={[styles.directionRowSpace , styles.Width_100]}>
+                    <TouchableOpacity onPress={ () => navigation.push('bills')} style={[styles.directionRowSpace , styles.Width_100]}>
                         <View style={[styles.directionRow]}>
                             <Image source={require('../../assets/images/bills.png')} style={[styles.icon20 , {marginRight:10}]} resizeMode={'contain'} />
                             <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black]} >
@@ -65,7 +65,7 @@ function More({navigation}) {
                     </TouchableOpacity>
                     <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'95%'}]}/>
 
-                    <TouchableOpacity style={[styles.directionRowSpace , styles.Width_100]}>
+                    <TouchableOpacity onPress={ () => navigation.push('support')} style={[styles.directionRowSpace , styles.Width_100]}>
                         <View style={[styles.directionRow]}>
                             <Image source={require('../../assets/images/contact.png')} style={[styles.icon20 , {marginRight:10}]} resizeMode={'contain'} />
                             <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black]} >
@@ -76,7 +76,7 @@ function More({navigation}) {
                     </TouchableOpacity>
                     <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'95%'}]}/>
 
-                    <TouchableOpacity style={[styles.directionRowSpace , styles.Width_100]}>
+                    <TouchableOpacity onPress={ () => navigation.push('settings')} style={[styles.directionRowSpace , styles.Width_100]}>
                         <View style={[styles.directionRow]}>
                             <Image source={require('../../assets/images/settings.png')} style={[styles.icon20 , {marginRight:10}]} resizeMode={'contain'} />
                             <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black]} >
@@ -87,7 +87,7 @@ function More({navigation}) {
                     </TouchableOpacity>
                     <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'95%'}]}/>
 
-                    <TouchableOpacity style={[styles.directionRowSpace , styles.Width_100]}>
+                    <TouchableOpacity onPress={ () => navigation.push('updateData')} style={[styles.directionRowSpace , styles.Width_100]}>
                         <View style={[styles.directionRow]}>
                             <Image source={require('../../assets/images/update.png')} style={[styles.icon20 , {marginRight:10}]} resizeMode={'contain'} />
                             <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black]} >

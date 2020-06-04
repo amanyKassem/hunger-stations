@@ -187,6 +187,21 @@ const en = {
     'wallet'                    : 'Wallet',
     'credit'                    : 'Credit',
     'voucher'                   : 'Shipping voucher',
+    'update'                    : 'Update',
+    'disconnect'                : 'Disconnect the device',
+    'yourCredit'                : 'Your credit in wallet is',
+    'addedDate'                 : 'Added date',
+    'finishedDate'              : 'Finished date',
+    'value'                     : 'Value',
+    'charge'                    : 'Charge',
+    'myTickets'                 : 'My tickets',
+    'generalQues'               : 'General questions',
+    'orderQues'                 : 'Order related questions',
+    'technQues'                 : 'Technical questions',
+    'serviceTerms'              : 'Service terms',
+    'callUs'                    : 'Call us',
+    'offersNotification'        : 'Offers notifications',
+    'back'                      : 'back',
 };
 
 export default en;

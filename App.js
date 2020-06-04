@@ -1,5 +1,5 @@
 import React , {useState , useEffect} from 'react';
-import { AsyncStorage } from 'react-native';
+import { AsyncStorage , I18nManager } from 'react-native';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';

@@ -59,11 +59,11 @@ function PromoCode({navigation}) {
                         <TouchableOpacity onPress={() => navigation.goBack()} style={[styles.directionRow , {position:'absolute' , left:20}]}>
                             <Image source={require('../../assets/images/yellow_back.png')} style={[styles.icon20 , {marginRight:5}]} resizeMode={'contain'} />
                         </TouchableOpacity>
-                        <Text style={[styles.textRegular , styles.text_black  , styles.textSize_18, {textAlign: 'center'}]}>{ i18n.t('promoCode') }</Text>
+                        <Text style={[styles.textBold , styles.text_black  , styles.textSize_18, {textAlign: 'center'}]}>{ i18n.t('promoCode') }</Text>
                     </View>
 
 
-                    <View style={[styles.directionColumnSpace , {flex:1}]}>
+                    <View style={[styles.directionColumnSpace, styles.marginTop_15 , {flex:1}]}>
                         <View style={[styles.paddingHorizontal_20 , styles.Width_100]}>
                             <View style={[styles.directionRow , styles.marginBottom_25]}>
                                 <Image source={require('../../assets/images/symbol.png')} style={[styles.icon25 , {marginRight:10}]} resizeMode={'contain'} />
