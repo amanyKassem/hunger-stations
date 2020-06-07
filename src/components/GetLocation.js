@@ -14,6 +14,12 @@ const longitudeDelta = 0.0421;
 const isIOS = Platform.OS === 'ios';
 
 function GetLocation({navigation, route}) {
+
+
+    const [showSearch, setShowSearch] = useState(false);
+    const [restName, setRestName] = useState('');
+
+
     let mapRef = useRef(null);
     const [desc, setDesc] = useState('');
     const [switchValue, setSwitchValue] = useState(false);
@@ -105,12 +111,29 @@ function GetLocation({navigation, route}) {
 
                 <View style={[styles.paddingHorizontal_25  , styles.position_R , styles.Width_100 , styles.paddingTop_50]}>
 
-                    <View style={[styles.directionRowCenter , styles.Width_100]}>
-                        <TouchableOpacity onPress={() => navigation.goBack()} style={{position:'absolute' , right:0}}>
-                            <Image source={require('../../assets/images/close.png')} style={[styles.icon20]} resizeMode={'contain'} />
-                        </TouchableOpacity>
-                        <Text style={[styles.textBold , styles.text_black  , styles.textSize_20, {textAlign: 'center'}]}>{ i18n.t('selectLoc') }</Text>
-                    </View>
+                    {
+                        !showSearch ?
+                            <View style={[styles.directionRowCenter , styles.Width_100]}>
+                                <TouchableOpacity onPress={() => setShowSearch(true)} style={{position:'absolute' , right:0}}>
+                                    <Image source={require('../../assets/images/search.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                                </TouchableOpacity>
+                                <Text style={[styles.textBold , styles.text_black  , styles.textSize_20, {textAlign: 'center'}]}>{ i18n.t('selectLoc') }</Text>
+                            </View>
+                            :
+                            <View style={[styles.Width_100, styles.directionRowSpace]}>
+                                <Input style={[styles.inputSearch , styles.height_40, styles.bg_White , {borderWidth:1 , borderColor:'#ddd'}]}
+                                       // placeholder={i18n.t('searchRest')}
+                                       placeholderStyle={[styles.text_gray]}
+                                       onChangeText={(restName) => setRestName(restName)}
+                                       value={restName}
+                                />
+                                <TouchableOpacity onPress={() => setShowSearch(false)}>
+                                    <Text
+                                        style={[styles.textRegular, styles.text_black, styles.textSize_14, styles.textCenter, styles.paddingHorizontal_5]}>{i18n.t('confirm')}</Text>
+                                </TouchableOpacity>
+                            </View>
+                    }
+
 
                     <View style={[styles.overlay_white , styles.marginTop_25 , styles.paddingVertical_25 , styles.paddingHorizontal_10 , styles.Radius_10]}>
                         <Text style={[styles.textRegular , styles.text_black  , styles.textSize_14, {textAlign: 'center'}]}>{city}</Text>

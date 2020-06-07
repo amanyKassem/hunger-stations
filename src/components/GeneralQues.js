@@ -18,7 +18,7 @@ function GeneralQues({navigation}) {
 
                     <View style={[styles.directionRowCenter , styles.Width_100 ,  styles.marginBottom_35]}>
                         <TouchableOpacity onPress={() => navigation.goBack()} style={[styles.directionRow , {position:'absolute' , left:20}]}>
-                            <Image source={require('../../assets/images/yellow_back.png')} style={[styles.icon20 , {marginRight:5}]} resizeMode={'contain'} />
+                            <Image source={require('../../assets/images/yellow_back.png')} style={[styles.icon20, styles.transform , {marginRight:5}]} resizeMode={'contain'} />
                         </TouchableOpacity>
                         <Text style={[styles.textBold , styles.text_black  , styles.textSize_18, {textAlign: 'center'}]}>{ i18n.t('generalQues') }</Text>
                     </View>

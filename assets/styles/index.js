@@ -152,6 +152,9 @@ const styles = ({
     marginTop_120 : {
         marginTop      : 120
     },
+    marginTop_80 : {
+        marginTop      : 80
+    },
     marginBottom_40 : {
         marginBottom      : 40
     },
@@ -605,6 +608,12 @@ const styles = ({
     height_250 : {
         height              : 250
     },
+    height_300 : {
+        height              : 300
+    },
+    height_350 : {
+        height              : 350
+    },
     heightFull : {
         height              : '100%'
     },
@@ -907,18 +916,12 @@ const styles = ({
     doteStyle:{
         backgroundColor: COLORS.light_gray,
         borderRadius: 5,
-        left: 0,
-        right:0,
-        bottom:170,
     },
     activeDot:{
         borderRadius: 5,
         borderWidth: 2,
         borderColor: COLORS.gray,
-        backgroundColor: COLORS.gray,
-        left: 0,
-        right:0,
-        bottom:170,
+        backgroundColor: COLORS.gray
     },
     doteStyle2:{
         backgroundColor: COLORS.gray,
@@ -1053,7 +1056,7 @@ const styles = ({
         textAlign           : I18nManager.isRTL ? 'right' : 'left',
         fontFamily          : 'sukar',
         fontSize            : 15,
-        width               : '95%',
+        width               : '100%',
         height              : 50
     },
     langFloat : {

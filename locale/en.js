@@ -202,6 +202,18 @@ const en = {
     'callUs'                    : 'Call us',
     'offersNotification'        : 'Offers notifications',
     'back'                      : 'back',
+    'what'                      : 'What do you do with your day?',
+    'unemployed'                : 'Unemployed',
+    'employed'                  : 'Employed',
+    'student'                   : 'Student',
+    'birthDate'                 : 'Birth date',
+    'whatName'                  : "what's your name ?",
+    'longSpan'                  : "Long lifespan",
+    'longLife'                  : "Long life",
+    'howApp'                    : "How did you know the app?",
+    'dontRemember'              : "I don't remember",
+    'internetAds'               : "Internet and video ads",
+    'socialInflu'               : "Social media programs and influencers",
 };
 
 export default en;

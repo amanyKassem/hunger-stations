@@ -108,7 +108,7 @@ function ActivationCode({navigation, route}) {
 
 						<View style={[styles.directionRowCenter , styles.Width_100]}>
 							<TouchableOpacity onPress={() => navigation.goBack()} style={[styles.directionRow , {position:'absolute' , left:0}]}>
-								<Image source={require('../../assets/images/yellow_back.png')} style={[styles.icon20 , {marginRight:5}]} resizeMode={'contain'} />
+								<Image source={require('../../assets/images/yellow_back.png')} style={[styles.icon20, styles.transform , {marginRight:5}]} resizeMode={'contain'} />
 								<Text style={[styles.textRegular , styles.text_yellow , styles.textSize_16]}>{ i18n.t('editNum') }</Text>
 							</TouchableOpacity>
 							<Text style={[styles.textRegular , styles.text_black  , styles.textSize_16, {textAlign: 'center'}]}>{ i18n.t('activateCode') }</Text>
@@ -125,7 +125,7 @@ function ActivationCode({navigation, route}) {
 						<KeyboardAvoidingView behavior={'padding'} style={[styles.keyboardAvoid]}>
 							<Form style={[styles.Width_100 , styles.flexCenter, styles.marginVertical_10]}>
 
-								<View style={[styles.directionRowSpace , styles.directionRowReverse , styles.Width_95]}>
+								<View style={[styles.directionRowSpace , I18nManager.isRTL ? styles.directionRowReverse : null , styles.Width_95]}>
 									<View style={[styles.position_R, styles.height_50, styles.flexCenter, styles.marginBottom_5 ]}>
 										<Input style={[styles.input , styles.width_50, (num1Status === 1 ? styles.Active : styles.noActive)
 											, {color: COLORS.black}]}

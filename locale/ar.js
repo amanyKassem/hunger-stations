@@ -202,6 +202,18 @@ const ar = {
     'callUs'                    : 'اتصل بنا',
     'offersNotification'        : 'اشعارات العروض',
     'back'                      : 'رجوع',
+    'what'                      : 'وش تسوي بيومك ؟',
+    'unemployed'                : 'غير موظف',
+    'employed'                  : 'موظف',
+    'student'                   : 'طالب',
+    'birthDate'                 : 'تاريخ الميلاد',
+    'whatName'                  : 'وش نسميك ؟',
+    'longSpan'                  : "طويلة العمر",
+    'longLife'                  : "طويل العمر",
+    'howApp'                    : "كيف عرفت التطبيق ؟",
+    'dontRemember'              : "لا اذكر",
+    'internetAds'               : "اعلانات الانترنت و الفيديو",
+    'socialInflu'               : "برامج التواصل الاجتماعي والمؤثرين",
 };
 
 export default ar;

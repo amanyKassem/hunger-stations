@@ -130,7 +130,7 @@ function Basket({navigation}) {
                 <View style={[styles.paddingHorizontal_20 , styles.bgFullWidth, styles.Width_100]}>
                     <View style={[styles.directionRowSpace , styles.Width_100]}>
                         <TouchableOpacity onPress={() => navigation.goBack()} style={[styles.directionRow]}>
-                            <Image source={require('../../assets/images/yellow_back.png')} style={[styles.icon20 , {marginRight:5}]} resizeMode={'contain'} />
+                            <Image source={require('../../assets/images/yellow_back.png')} style={[styles.icon20, styles.transform , {marginRight:5}]} resizeMode={'contain'} />
                             <Text style={[styles.textRegular , styles.text_yellow , styles.textSize_17]}>{ i18n.t('menu') }</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={toggleNoteModal} style={[styles.directionRow]}>
