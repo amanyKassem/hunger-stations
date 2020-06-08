@@ -139,7 +139,7 @@ function Basket({navigation}) {
                     </View>
 
                     <View style={[styles.marginTop_25]}>
-                        <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black]} >
+                        <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black, styles.alignStart]} >
                             { i18n.t('orderDetails') }
                         </Text>
                         <View style={[styles.directionRowSpace , styles.marginTop_15]}>
@@ -171,17 +171,17 @@ function Basket({navigation}) {
                             </TouchableOpacity>
                         </View>
                         <View style={[styles.marginVertical_15 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'100%'}]}/>
-                        <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black]} >
+                        <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black, styles.alignStart]} >
                             { i18n.t('deliveryAddress') }
                         </Text>
-                        <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray, styles.marginTop_10]} >
+                        <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray, styles.marginTop_10, styles.alignStart]} >
                             المنصورة ان شاء الله
                         </Text>
                         <View style={[styles.marginVertical_15 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'100%'}]}/>
-                        <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black]} >
+                        <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black, styles.alignStart]} >
                             { i18n.t('deliveryTime') }
                         </Text>
-                        <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray, styles.marginTop_10]} >
+                        <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray, styles.marginTop_10, styles.alignStart]} >
                             40 - 50 دقيقه
                         </Text>
                         <View style={[styles.marginVertical_15 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'100%'}]}/>
@@ -207,7 +207,7 @@ function Basket({navigation}) {
                             </TouchableOpacity>
                         </View>
                         <View style={[styles.marginVertical_15 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'100%'}]}/>
-                        <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black , styles.marginBottom_10]} >
+                        <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black , styles.marginBottom_10, styles.alignStart]} >
                             { i18n.t('payDet') }
                         </Text>
                         <View style={[styles.directionRowSpace , styles.marginBottom_10 ]}>
@@ -227,10 +227,10 @@ function Basket({navigation}) {
                             </Text>
                         </View>
                         <View style={[styles.directionRowSpace , styles.marginBottom_10]}>
-                            <Text style={[styles.textRegular, styles.textSize_16 , styles.text_gray]} >
+                            <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black]} >
                                 { i18n.t('total') }
                             </Text>
-                            <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black ]} >
+                            <Text style={[styles.textRegular, styles.textSize_16 , styles.text_aqua ]} >
                                 250 ريال
                             </Text>
                         </View>
@@ -257,9 +257,9 @@ function Basket({navigation}) {
                         <Text style={[styles.textBold , styles.text_black , styles.textSize_16 , styles.marginBottom_15,styles.marginTop_10]}>{ i18n.t('anyNotes') }</Text>
 
                         <View style={[styles.position_R, styles.height_70, styles.flexCenter, styles.marginTop_15]}>
-                            <Item floatingLabel style={[styles.item, styles.position_R, { right: 5 }]}>
+                            <Item floatingLabel style={[styles.item, styles.position_R]}>
                                 <Label style={[styles.label, styles.textRegular ,{ color:noteStatus === 1 ?  COLORS.black :  COLORS.gray}]}>{ i18n.t('notes') }</Label>
-                                <Input style={[styles.input, styles.height_50, (noteStatus === 1 ? styles.Active : styles.noActive)]}
+                                <Input style={[styles.input , styles.Width_100, styles.height_50, (noteStatus === 1 ? styles.Active : styles.noActive)]}
                                        onChangeText={(note) => setNote(note)}
                                        onBlur={() => unActiveInput('note')}
                                        onFocus={() => activeInput('note')}
@@ -287,7 +287,7 @@ function Basket({navigation}) {
                         <Text style={[styles.textBold , styles.text_black , styles.textSize_16 , styles.marginBottom_15,styles.marginTop_10]}>{ i18n.t('enterCouponCode') }</Text>
 
                         <View style={[styles.position_R, styles.height_70, styles.flexCenter, styles.marginTop_15]}>
-                            <Item floatingLabel style={[styles.item, styles.position_R, { right: 5 }]}>
+                            <Item floatingLabel style={[styles.item, styles.position_R]}>
                                 <Label style={[styles.label, styles.textRegular ,{ color:couponStatus === 1 ?  COLORS.black :  COLORS.gray}]}>{ i18n.t('couponCode') }</Label>
                                 <Input style={[styles.input, styles.height_50, (couponStatus === 1 ? styles.Active : styles.noActive)]}
                                        onChangeText={(coupon) => setCoupon(coupon)}
@@ -318,7 +318,7 @@ function Basket({navigation}) {
                         <Text style={[styles.textBold , styles.text_black , styles.textSize_16 , styles.marginBottom_15,styles.marginTop_10]}>{ i18n.t('enterPromoCode') }</Text>
 
                         <View style={[styles.position_R, styles.height_70, styles.flexCenter, styles.marginTop_15]}>
-                            <Item floatingLabel style={[styles.item, styles.position_R, { right: 5 }]}>
+                            <Item floatingLabel style={[styles.item, styles.position_R]}>
                                 <Label style={[styles.label, styles.textRegular ,{ color:promoStatus === 1 ?  COLORS.black :  COLORS.gray}]}>{ i18n.t('promoCode') }</Label>
                                 <Input style={[styles.input, styles.height_50, (promoStatus === 1 ? styles.Active : styles.noActive)]}
                                        onChangeText={(promo) => setPromo(promo)}

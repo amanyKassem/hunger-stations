@@ -26,28 +26,28 @@ function OrderQues({navigation}) {
                     <View style={[styles.paddingHorizontal_20 , styles.bgFullWidth, styles.Width_100, styles.marginTop_15]}>
 
                         <View style={[styles.marginBottom_10]}>
-                            <Text style={[styles.textBold , styles.text_black  , styles.textSize_15 ,{lineHeight:24}]}>
+                            <Text style={[styles.textBold , styles.text_black  , styles.textSize_15, styles.alignStart , styles.writing ,{lineHeight:24}]}>
                                 ما هي ساعات عمل التطبيق ؟
                             </Text>
-                            <Text style={[styles.textRegular , styles.text_gray  , styles.textSize_15 ,{lineHeight:24}]}>
+                            <Text style={[styles.textRegular , styles.text_gray  , styles.textSize_15, styles.alignStart , styles.writing ,{lineHeight:24}]}>
                                 هذا النص هو مثال هذا النص هو مثال هذا النص هو مثال هذا النص هو مثال
                             </Text>
                         </View>
 
                         <View style={[styles.marginBottom_10]}>
-                            <Text style={[styles.textBold , styles.text_black  , styles.textSize_15 ,{lineHeight:24}]}>
+                            <Text style={[styles.textBold , styles.text_black  , styles.textSize_15, styles.alignStart , styles.writing ,{lineHeight:24}]}>
                                 ما هي ساعات عمل التطبيق ؟
                             </Text>
-                            <Text style={[styles.textRegular , styles.text_gray  , styles.textSize_15 ,{lineHeight:24}]}>
+                            <Text style={[styles.textRegular , styles.text_gray  , styles.textSize_15, styles.alignStart , styles.writing ,{lineHeight:24}]}>
                                 هذا النص هو مثال هذا النص هو مثال هذا النص هو مثال هذا النص هو مثال
                             </Text>
                         </View>
 
                         <View style={[styles.marginBottom_10]}>
-                            <Text style={[styles.textBold , styles.text_black  , styles.textSize_15 ,{lineHeight:24}]}>
+                            <Text style={[styles.textBold , styles.text_black  , styles.textSize_15, styles.alignStart , styles.writing ,{lineHeight:24}]}>
                                 ما هي ساعات عمل التطبيق ؟
                             </Text>
-                            <Text style={[styles.textRegular , styles.text_gray  , styles.textSize_15 ,{lineHeight:24}]}>
+                            <Text style={[styles.textRegular , styles.text_gray  , styles.textSize_15, styles.alignStart , styles.writing ,{lineHeight:24}]}>
                                 هذا النص هو مثال هذا النص هو مثال هذا النص هو مثال هذا النص هو مثال
                             </Text>
                         </View>

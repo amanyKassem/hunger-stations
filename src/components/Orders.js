@@ -32,7 +32,7 @@ function Orders({navigation}) {
                                     250 ريال
                                 </Text>
                             </View>
-                            <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.marginBottom_5]} >
+                            <Text style={[styles.textRegular, styles.textSize_14 , styles.text_red , styles.marginBottom_5, styles.alignStart]} >
                                 لم يتم التوصيل
                             </Text>
                             <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.alignStart]} >
@@ -54,7 +54,7 @@ function Orders({navigation}) {
                                     250 ريال
                                 </Text>
                             </View>
-                            <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.marginBottom_5]} >
+                            <Text style={[styles.textRegular, styles.textSize_14 , styles.text_red , styles.marginBottom_5, styles.alignStart]} >
                                 لم يتم التوصيل
                             </Text>
                             <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.alignStart]} >
@@ -76,7 +76,7 @@ function Orders({navigation}) {
                                     250 ريال
                                 </Text>
                             </View>
-                            <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.marginBottom_5]} >
+                            <Text style={[styles.textRegular, styles.textSize_14 , styles.text_red , styles.marginBottom_5, styles.alignStart]} >
                                 لم يتم التوصيل
                             </Text>
                             <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.alignStart]} >

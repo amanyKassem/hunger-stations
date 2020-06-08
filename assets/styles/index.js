@@ -1,8 +1,9 @@
-import {Dimensions , I18nManager} from "react-native";
+import {Dimensions, I18nManager, Platform} from "react-native";
 import COLORS from '../../src/consts/colors'
 
 const width     = Dimensions.get('window').width;
 const height    = Dimensions.get('window').height;
+const isIOS = Platform.OS === 'ios';
 
 const styles = ({
 
@@ -20,6 +21,10 @@ const styles = ({
 
     container:{
       flex:1
+    },
+
+    writing:{
+      writingDirection:I18nManager.isRTL ? 'rtl' : 'ltr'
     },
     // Style Color ConText
 
@@ -1250,6 +1255,8 @@ const styles = ({
     },
     checkbox:{
         color:COLORS.yellow,
+        marginRight:20,
+        paddingRight:isIOS ? 3 : 2
     },
     tableHead: {
         height: 50,

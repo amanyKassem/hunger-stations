@@ -31,9 +31,9 @@ function PaymentMethods({navigation}) {
                                    <Image source={require('../../assets/images/credit.png')} style={[styles.icon25 , {marginRight:10}]} resizeMode={'contain'} />
                                    <Text style={[styles.textBold , styles.text_black  , styles.textSize_14]}>{ i18n.t('addNewCard') }</Text>
                                </View>
-                               <Image source={require('../../assets/images/left.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                               <Image source={require('../../assets/images/left.png')} style={[styles.icon20, styles.transform]} resizeMode={'contain'} />
                            </View>
-                           <Text style={[styles.textRegular , styles.text_gray  , styles.textSize_14 , {marginLeft:35}]}>{ i18n.t('noCard') }</Text>
+                           <Text style={[styles.textRegular , styles.text_gray  , styles.textSize_14 , styles.alignStart , {marginLeft:35}]}>{ i18n.t('noCard') }</Text>
                         </TouchableOpacity>
                         <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'100%'}]}/>
 
@@ -43,9 +43,9 @@ function PaymentMethods({navigation}) {
                                     <Image source={require('../../assets/images/wallet.png')} style={[styles.icon25 , {marginRight:10}]} resizeMode={'contain'} />
                                     <Text style={[styles.textBold , styles.text_black  , styles.textSize_14]}>{ i18n.t('wallet') }</Text>
                                 </View>
-                                <Image source={require('../../assets/images/left.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                                <Image source={require('../../assets/images/left.png')} style={[styles.icon20, styles.transform]} resizeMode={'contain'} />
                             </View>
-                            <Text style={[styles.textRegular , styles.text_gray  , styles.textSize_14 , {marginLeft:35}]}>20 ريال</Text>
+                            <Text style={[styles.textRegular , styles.text_gray  , styles.textSize_14, styles.alignStart , {marginLeft:35}]}>20 ريال</Text>
                         </TouchableOpacity>
                         <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'100%'}]}/>
 
@@ -55,7 +55,7 @@ function PaymentMethods({navigation}) {
                                     <Image source={require('../../assets/images/gift.png')} style={[styles.icon25 , {marginRight:10}]} resizeMode={'contain'} />
                                     <Text style={[styles.textBold , styles.text_black  , styles.textSize_14]}>{ i18n.t('voucher') }</Text>
                                 </View>
-                                <Image source={require('../../assets/images/left.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                                <Image source={require('../../assets/images/left.png')} style={[styles.icon20, styles.transform]} resizeMode={'contain'} />
                             </View>
                         </TouchableOpacity>
                         <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'100%'}]}/>

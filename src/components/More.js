@@ -28,7 +28,7 @@ function More({navigation}) {
                                 { i18n.t('promoCode') }
                             </Text>
                         </View>
-                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20, styles.transform]} resizeMode={'contain'} />
                     </TouchableOpacity>
                     <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'95%'}]}/>
 
@@ -39,7 +39,7 @@ function More({navigation}) {
                                 { i18n.t('account') }
                             </Text>
                         </View>
-                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20, styles.transform]} resizeMode={'contain'} />
                     </TouchableOpacity>
                     <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'95%'}]}/>
 
@@ -50,7 +50,7 @@ function More({navigation}) {
                                 { i18n.t('payMethods') }
                             </Text>
                         </View>
-                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20, styles.transform]} resizeMode={'contain'} />
                     </TouchableOpacity>
                     <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'95%'}]}/>
 
@@ -61,7 +61,7 @@ function More({navigation}) {
                                 { i18n.t('bills') }
                             </Text>
                         </View>
-                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20, styles.transform]} resizeMode={'contain'} />
                     </TouchableOpacity>
                     <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'95%'}]}/>
 
@@ -72,7 +72,7 @@ function More({navigation}) {
                                 { i18n.t('support') }
                             </Text>
                         </View>
-                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20, styles.transform]} resizeMode={'contain'} />
                     </TouchableOpacity>
                     <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'95%'}]}/>
 
@@ -83,7 +83,7 @@ function More({navigation}) {
                                 { i18n.t('settings') }
                             </Text>
                         </View>
-                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20, styles.transform]} resizeMode={'contain'} />
                     </TouchableOpacity>
                     <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'95%'}]}/>
 
@@ -94,7 +94,7 @@ function More({navigation}) {
                                 { i18n.t('updateData') }
                             </Text>
                         </View>
-                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                        <Image source={require('../../assets/images/left.png')} style={[styles.icon20, styles.transform]} resizeMode={'contain'} />
                     </TouchableOpacity>
                     <View style={[styles.marginVertical_20 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'95%'}]}/>
 

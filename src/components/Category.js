@@ -51,7 +51,7 @@ function Category({navigation, route}) {
                                 خيري
                             </Text>
                         </View>
-                        <Text style={[styles.textRegular, styles.textSize_13 , styles.text_gray , styles.marginBottom_15]} >
+                        <Text style={[styles.textRegular, styles.textSize_13 , styles.text_gray , styles.marginBottom_15, styles.alignStart]} >
                             ساندوتشات , مأكولات سريعة , مأكولات أمريكية
                         </Text>
                         <View style={[styles.directionRowSpace]}>
@@ -68,10 +68,10 @@ function Category({navigation, route}) {
 
                     <View style={[styles.marginTop_25]}>
                         <TouchableOpacity onPress={catType === 0 ? toggleModal : () => navigation.push('product' , {catType})} style={[{flexDirection:'row'}]}>
-                            <Image source= {require('../../assets/images/img2.png')} style={[styles.icon80 , styles.Radius_50]} resizeMode={'contain'} />
+                            <Image source= {require('../../assets/images/img2.png')} style={[styles.icon80 , isIOS ? styles.Radius_15 : styles.Radius_50]} resizeMode={'contain'} />
                             <View style={[styles.productCard]}>
                                 <View style={[styles.directionRowSpace]}>
-                                    <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.marginBottom_5]} >
+                                    <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.marginBottom_5, styles.alignStart]} >
                                         سلة طعام
                                     </Text>
                                     {
@@ -87,20 +87,20 @@ function Category({navigation, route}) {
                                     }
 
                                 </View>
-                                <Text style={[styles.textRegular, styles.textSize_12 , styles.text_gray , styles.marginBottom_5]} >
+                                <Text style={[styles.textRegular, styles.textSize_12 , styles.text_gray , styles.marginBottom_5, styles.alignStart , styles.writing]} >
                                     ساندوتشات , مأكولات سريعة , مأكولات أمريكية
                                 </Text>
-                                <Text style={[styles.textRegular, styles.textSize_14 , styles.text_black]} >
+                                <Text style={[styles.textRegular, styles.textSize_14 , styles.text_black, styles.alignStart]} >
                                     250 ريال
                                 </Text>
                             </View>
                         </TouchableOpacity>
                         <View style={[styles.marginVertical_15 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'80%'}]}/>
                         <TouchableOpacity onPress={catType === 0 ? toggleModal : () => navigation.push('product' , {catType})} style={[{flexDirection:'row'}]}>
-                            <Image source= {require('../../assets/images/img2.png')} style={[styles.icon80 , styles.Radius_50]} resizeMode={'contain'} />
+                            <Image source= {require('../../assets/images/img2.png')} style={[styles.icon80 , isIOS ? styles.Radius_15 : styles.Radius_50]} resizeMode={'contain'} />
                             <View style={[styles.productCard]}>
                                 <View style={[styles.directionRowSpace]}>
-                                    <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.marginBottom_5]} >
+                                    <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.marginBottom_5, styles.alignStart]} >
                                         سلة طعام
                                     </Text>
                                     {
@@ -116,20 +116,20 @@ function Category({navigation, route}) {
                                     }
 
                                 </View>
-                                <Text style={[styles.textRegular, styles.textSize_12 , styles.text_gray , styles.marginBottom_5]} >
+                                <Text style={[styles.textRegular, styles.textSize_12 , styles.text_gray , styles.marginBottom_5, styles.alignStart , styles.writing]} >
                                     ساندوتشات , مأكولات سريعة , مأكولات أمريكية
                                 </Text>
-                                <Text style={[styles.textRegular, styles.textSize_14 , styles.text_black]} >
+                                <Text style={[styles.textRegular, styles.textSize_14 , styles.text_black, styles.alignStart]} >
                                     250 ريال
                                 </Text>
                             </View>
                         </TouchableOpacity>
                         <View style={[styles.marginVertical_15 , styles.flexCenter,{borderWidth:1 , borderColor: '#ddd' , width:'80%'}]}/>
                         <TouchableOpacity onPress={catType === 0 ? toggleModal : () => navigation.push('product' , {catType})} style={[{flexDirection:'row'}]}>
-                            <Image source= {require('../../assets/images/img2.png')} style={[styles.icon80 , styles.Radius_50]} resizeMode={'contain'} />
+                            <Image source= {require('../../assets/images/img2.png')} style={[styles.icon80 , isIOS ? styles.Radius_15 : styles.Radius_50]} resizeMode={'contain'} />
                             <View style={[styles.productCard]}>
                                 <View style={[styles.directionRowSpace]}>
-                                    <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.marginBottom_5]} >
+                                    <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.marginBottom_5, styles.alignStart]} >
                                         سلة طعام
                                     </Text>
                                     {
@@ -145,10 +145,10 @@ function Category({navigation, route}) {
                                     }
 
                                 </View>
-                                <Text style={[styles.textRegular, styles.textSize_12 , styles.text_gray , styles.marginBottom_5]} >
+                                <Text style={[styles.textRegular, styles.textSize_12 , styles.text_gray , styles.marginBottom_5, styles.alignStart , styles.writing]} >
                                     ساندوتشات , مأكولات سريعة , مأكولات أمريكية
                                 </Text>
-                                <Text style={[styles.textRegular, styles.textSize_14 , styles.text_black]} >
+                                <Text style={[styles.textRegular, styles.textSize_14 , styles.text_black, styles.alignStart]} >
                                     250 ريال
                                 </Text>
                             </View>

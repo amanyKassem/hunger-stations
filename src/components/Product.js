@@ -1,6 +1,6 @@
 import React, { useState , useEffect , useRef } from "react";
-import {View, Text, Image, TouchableOpacity, CheckBox, Dimensions , I18nManager , ActivityIndicator} from "react-native";
-import {Container, Content, Card, Icon} from 'native-base'
+import {View, Text, Image, TouchableOpacity, Dimensions , Platform , ActivityIndicator} from "react-native";
+import {Container, Content, CheckBox, Icon} from 'native-base'
 import styles from '../../assets/styles'
 import i18n from "../../locale/i18n";
 import COLORS from "../consts/colors";
@@ -44,10 +44,10 @@ function Product({navigation, route}) {
 
                 <View style={[styles.bgFullWidth, styles.Width_100 , styles.directionColumnSpace]}>
                    <View style={[styles.paddingHorizontal_20 , styles.marginTop_20,styles.Width_100]}>
-                       <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black , styles.marginBottom_5]} >
+                       <Text style={[styles.textRegular, styles.textSize_16 , styles.text_black , styles.marginBottom_5 , styles.alignStart]} >
                            اطعام
                        </Text>
-                       <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , {lineHeight:22}]} >
+                       <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray , styles.alignStart , styles.writing , {lineHeight:22}]} >
                            ساندوتشات , مأكولات سريعة , مأكولات أمريكية ساندوتشات ,
                            ساندوتشات , مأكولات سريعة , مأكولات أمريكية ساندوتشات ,
                            ساندوتشات , مأكولات سريعة , مأكولات أمريكية ساندوتشات ,
@@ -61,15 +61,18 @@ function Product({navigation, route}) {
                                            <Text style={[styles.textRegular, styles.textSize_15, styles.text_black]} >
                                                هل ترغب بالبطاطس الحارة ؟
                                            </Text>
-                                           <Text style={[styles.textRegular, styles.textSize_13 , styles.text_black , styles.bg_lightYellow , styles.paddingHorizontal_15 , styles.Radius_15, styles.paddingVertical_5]} >
-                                               اختر لغاية 4
-                                           </Text>
+                                           <View style={[, styles.bg_lightYellow , styles.paddingHorizontal_15 , styles.Radius_15, styles.paddingVertical_5]}>
+                                               <Text style={[styles.textRegular, styles.textSize_13 , styles.text_black ]} >
+                                                   اختر لغاية 4
+                                               </Text>
+                                           </View>
                                        </View>
                                        <View style={[styles.directionRowSpace]}>
                                            <View style={styles.directionRow}>
                                                <CheckBox
-                                                   value={isSelected}
-                                                   onValueChange={setSelection}
+                                                   checked={isSelected}
+                                                   color={COLORS.yellow}
+                                                   onPress={() => setSelection(!isSelected)}
                                                    style={styles.checkbox}
                                                />
                                                <Text style={[styles.textRegular, styles.textSize_15, styles.text_black]} >
@@ -84,8 +87,9 @@ function Product({navigation, route}) {
                                        <View style={[styles.directionRowSpace]}>
                                            <View style={styles.directionRow}>
                                                <CheckBox
-                                                   value={isSelected}
-                                                   onValueChange={setSelection}
+                                                   checked={isSelected}
+                                                   color={COLORS.yellow}
+                                                   onPress={() => setSelection(!isSelected)}
                                                    style={styles.checkbox}
                                                />
                                                <Text style={[styles.textRegular, styles.textSize_15, styles.text_black]} >
@@ -103,15 +107,18 @@ function Product({navigation, route}) {
                                            <Text style={[styles.textRegular, styles.textSize_15, styles.text_black]} >
                                                اختيار من الساندوتش
                                            </Text>
-                                           <Text style={[styles.textRegular, styles.textSize_13 , styles.text_black , styles.bg_lightYellow , styles.paddingHorizontal_15 , styles.Radius_15, styles.paddingVertical_5]} >
-                                               اختر لغاية 4
-                                           </Text>
+                                           <View style={[, styles.bg_lightYellow , styles.paddingHorizontal_15 , styles.Radius_15, styles.paddingVertical_5]}>
+                                               <Text style={[styles.textRegular, styles.textSize_13 , styles.text_black ]} >
+                                                   اختر لغاية 4
+                                               </Text>
+                                           </View>
                                        </View>
                                        <View style={[styles.directionRowSpace]}>
                                            <View style={styles.directionRow}>
                                                <CheckBox
-                                                   value={isSelected}
-                                                   onValueChange={setSelection}
+                                                   checked={isSelected}
+                                                   color={COLORS.yellow}
+                                                   onPress={() => setSelection(!isSelected)}
                                                    style={styles.checkbox}
                                                />
                                                <Text style={[styles.textRegular, styles.textSize_15, styles.text_black]} >
@@ -126,8 +133,9 @@ function Product({navigation, route}) {
                                        <View style={[styles.directionRowSpace]}>
                                            <View style={styles.directionRow}>
                                                <CheckBox
-                                                   value={isSelected}
-                                                   onValueChange={setSelection}
+                                                   checked={isSelected}
+                                                   color={COLORS.yellow}
+                                                   onPress={() => setSelection(!isSelected)}
                                                    style={styles.checkbox}
                                                />
                                                <Text style={[styles.textRegular, styles.textSize_15, styles.text_black]} >
@@ -147,7 +155,7 @@ function Product({navigation, route}) {
                    </View>
 
 
-                    <View style={[{borderTopLeftRadius:50, borderTopRightRadius:50 , borderColor:'#ddd' , borderWidth:1 , borderBottomWidth:0},
+                    <View style={[{borderTopLeftRadius:isIOS ? 35 :50, borderTopRightRadius:isIOS ? 35 :50 , borderColor:'#ddd' , borderWidth:1 , borderBottomWidth:0},
                         styles.bg_White, styles.overHidden, styles.Width_100, styles.paddingVertical_25 , styles.paddingHorizontal_25 , styles.directionRowSpace]}>
 
                         <View style={[styles.directionRow]}>

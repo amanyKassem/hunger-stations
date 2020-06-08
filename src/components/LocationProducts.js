@@ -1,5 +1,5 @@
 import React, { useState , useEffect , useRef } from "react";
-import {View, Text, Image, TouchableOpacity, ScrollView, Dimensions , I18nManager , ActivityIndicator} from "react-native";
+import {View, Text, Image, TouchableOpacity, ScrollView, Dimensions , Platform , ActivityIndicator} from "react-native";
 import {Container, Content, Card, Input} from 'native-base'
 import styles from '../../assets/styles'
 import i18n from "../../locale/i18n";
@@ -32,7 +32,7 @@ function LocationProduct({navigation}) {
                                     <>
                                         <TouchableOpacity onPress={() => navigation.goBack()}>
                                             <Image source={require('../../assets/images/back.png')}
-                                                   style={[styles.icon20]} resizeMode={'contain'}/>
+                                                   style={[styles.icon20, styles.transform]} resizeMode={'contain'}/>
                                         </TouchableOpacity>
                                         <Text style={[styles.textRegular, styles.text_black, styles.textSize_18]}>اسم
                                             المنطقة</Text>
@@ -169,11 +169,13 @@ function LocationProduct({navigation}) {
                                     <Text style={[styles.textBold, styles.textSize_16 , styles.text_black]} >
                                         اطعام
                                     </Text>
-                                    <Text style={[styles.textRegular, styles.textSize_13 , styles.text_black , styles.bg_lightYellow , styles.paddingHorizontal_15 , styles.Radius_15, styles.paddingVertical_5]} >
-                                        اعلان
-                                    </Text>
+                                    <View style={[styles.bg_lightYellow , styles.paddingHorizontal_15 , styles.Radius_15, styles.paddingVertical_5]}>
+                                        <Text style={[styles.textRegular, styles.textSize_13 , styles.text_black]} >
+                                            اعلان
+                                        </Text>
+                                    </View>
                                 </View>
-                                <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray, styles.marginBottom_5]} >
+                                <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray, styles.marginBottom_5, styles.alignStart]} >
                                     خيري
                                 </Text>
                                 <View style={[styles.directionRow, styles.marginBottom_5]}>
@@ -221,11 +223,13 @@ function LocationProduct({navigation}) {
                                     <Text style={[styles.textBold, styles.textSize_16 , styles.text_black]} >
                                         اطلب لهم
                                     </Text>
-                                    <Text style={[styles.textRegular, styles.textSize_13 , styles.text_black , styles.bg_lightYellow , styles.paddingHorizontal_15 , styles.Radius_15, styles.paddingVertical_5]} >
-                                        اعلان
-                                    </Text>
+                                    <View style={[styles.bg_lightYellow , styles.paddingHorizontal_15 , styles.Radius_15, styles.paddingVertical_5]}>
+                                        <Text style={[styles.textRegular, styles.textSize_13 , styles.text_black]} >
+                                            اعلان
+                                        </Text>
+                                    </View>
                                 </View>
-                                <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray, styles.marginBottom_5]} >
+                                <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray, styles.marginBottom_5, styles.alignStart]} >
                                     خيري
                                 </Text>
                                 <View style={[styles.directionRow, styles.marginBottom_5]}>
@@ -273,11 +277,13 @@ function LocationProduct({navigation}) {
                                     <Text style={[styles.textBold, styles.textSize_16 , styles.text_black]} >
                                         اطلب لهم
                                     </Text>
-                                    <Text style={[styles.textRegular, styles.textSize_13 , styles.text_black , styles.bg_lightYellow , styles.paddingHorizontal_15 , styles.Radius_15, styles.paddingVertical_5]} >
-                                        اعلان
-                                    </Text>
+                                    <View style={[styles.bg_lightYellow , styles.paddingHorizontal_15 , styles.Radius_15, styles.paddingVertical_5]}>
+                                        <Text style={[styles.textRegular, styles.textSize_13 , styles.text_black]} >
+                                            اعلان
+                                        </Text>
+                                    </View>
                                 </View>
-                                <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray, styles.marginBottom_5]} >
+                                <Text style={[styles.textRegular, styles.textSize_14 , styles.text_gray, styles.marginBottom_5, styles.alignStart]} >
                                     خيري
                                 </Text>
                                 <View style={[styles.directionRow, styles.marginBottom_5]}>

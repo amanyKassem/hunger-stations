@@ -76,7 +76,8 @@ function UpdateData({navigation}) {
                                 paginationStyle={[styles.SelfCenter, {bottom:317 , left:'35%', zIndex:1 , width:100}]}
                                 activeDotStyle={[styles.activeDot]} key={4}
                                 containerStyle={[styles.heightFull , styles.bg_White , styles.marginHorizontal_25]}
-                                style={{ flexDirection: isIOS && I18nManager.isRTL  ? 'row' : 'row-reverse' }}
+                                // style={{ flexDirection: isIOS && I18nManager.isRTL  ? 'row' : 'row-reverse' }}
+                                style={{ flexDirection: (isIOS && I18nManager.isRTL) || !I18nManager.isRTL ? 'row' : 'row-reverse' }}
                                 showsButtons={true}
                                 buttonWrapperStyle={[styles.bg_light_gray , styles.height_50, styles.paddingHorizontal_15]}
                                 prevButton={<Text style={[styles.textBold ,{color:'#000'}]}>{ i18n.t('back') }</Text>}
