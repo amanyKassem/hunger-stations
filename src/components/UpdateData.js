@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import {View, Text, Image, TouchableOpacity, Switch, Dimensions , I18nManager , Share } from "react-native";
-import {Container, Content, Toast} from 'native-base'
+import {View, Text, Image, TouchableOpacity, Dimensions , I18nManager } from "react-native";
+import {Container, Content} from 'native-base'
 import styles from '../../assets/styles'
 import i18n from "../../locale/i18n";
-import COLORS from "../consts/colors";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import Swiper from 'react-native-swiper';
 
@@ -17,7 +16,7 @@ function UpdateData({navigation}) {
     const [name, setName] = useState(0);
     const [knowApp, setKnowApp] = useState(0);
     const [isDatePickerVisible , setIsDatePickerVisible ] = useState(false);
-    const [swiperIndex , setIndex ] = useState(null);
+    const [swiperIndex , setIndex ] = useState(0);
     const [date , setDate ] = useState('');
 
     function selectType(selectedType) {
@@ -32,6 +31,7 @@ function UpdateData({navigation}) {
     function howType(selectedHow) {
         setKnowApp(selectedHow)
     }
+
 
     function onSwipeIndexChanged(index) {
         setIndex(index)
@@ -75,29 +75,31 @@ function UpdateData({navigation}) {
                         <Swiper dotStyle={[styles.doteStyle]}
                                 paginationStyle={[styles.SelfCenter, {bottom:317 , left:'35%', zIndex:1 , width:100}]}
                                 activeDotStyle={[styles.activeDot]} key={4}
-                                containerStyle={[styles.heightFull , styles.bg_White , styles.marginHorizontal_25]}
                                 // style={{ flexDirection: isIOS && I18nManager.isRTL  ? 'row' : 'row-reverse' }}
-                                style={{ flexDirection: (isIOS && I18nManager.isRTL) || !I18nManager.isRTL ? 'row' : 'row-reverse' }}
+                                style={[{ flexDirection: (isIOS && I18nManager.isRTL) || !I18nManager.isRTL ? 'row' : 'row-reverse' } ,
+                                    styles.heightFull]}
                                 showsButtons={true}
-                                buttonWrapperStyle={[styles.bg_light_gray , styles.height_50, styles.paddingHorizontal_15]}
+                                buttonWrapperStyle={[styles.bg_light_gray , styles.height_50, styles.paddingHorizontal_15,styles.Width_90 , {marginLeft:18}]}
                                 prevButton={<Text style={[styles.textBold ,{color:'#000'}]}>{ i18n.t('back') }</Text>}
                                 nextButton={<Text style={[styles.textBold ,{color:'#000'}]}>{ i18n.t('next') }</Text>}
                                 autoplay={false} loop={false}
-                                onIndexChanged={(index) => onSwipeIndexChanged(index)}>
+                                contentInsetAdjustmentBehavior={true}
+                                onIndexChanged={(index) => onSwipeIndexChanged(index)}
+                        >
 
-                            <View style={[styles.directionColumnCenter, styles.flexCenter, styles.marginTop_80]}>
+                            <View style={[styles.directionColumnCenter, styles.flexCenter , {paddingTop:80} , styles.bg_White ,styles.Width_90]}>
                                 <Text style={[styles.textBold , styles.text_black , styles.textSize_15, styles.textCenter , styles.marginBottom_10 ]}>{ i18n.t('what') }</Text>
 
-                               <View style={[styles.marginVertical_35]}>
+                               <View style={[styles.marginVertical_35 , {marginBottom:150}]}>
                                    <TouchableOpacity onPress={() => selectType(0)}>
                                        <Text style={[styles.textBold , type === 0 ? styles.text_black : styles.text_light_gray , styles.textSize_14, styles.textCenter ]}>{ i18n.t('unemployed') }</Text>
                                    </TouchableOpacity>
-                                   <View style={[styles.marginVertical_10 , styles.flexCenter,{borderWidth:.5 , borderColor: '#ddd' , width}]}/>
+                                   <View style={[styles.marginVertical_10 , styles.flexCenter,{borderWidth:.5 , borderColor: '#ddd' , width:width-38}]}/>
 
                                    <TouchableOpacity onPress={() => selectType(1)}>
                                        <Text style={[styles.textBold , type === 1 ? styles.text_black : styles.text_light_gray , styles.textSize_14, styles.textCenter ]}>{ i18n.t('employed') }</Text>
                                    </TouchableOpacity>
-                                   <View style={[styles.marginVertical_10 , styles.flexCenter,{borderWidth:.5 , borderColor: '#ddd' , width}]}/>
+                                   <View style={[styles.marginVertical_10 , styles.flexCenter,{borderWidth:.5 , borderColor: '#ddd' , width:width-38}]}/>
 
                                    <TouchableOpacity onPress={() => selectType(2)}>
                                        <Text style={[styles.textBold , type === 2 ? styles.text_black : styles.text_light_gray , styles.textSize_14, styles.textCenter ]}>{ i18n.t('student') }</Text>
@@ -106,10 +108,10 @@ function UpdateData({navigation}) {
 
                             </View>
 
-                            <View style={[styles.directionColumnCenter, styles.flexCenter, styles.marginTop_80]}>
+                            <View style={[styles.directionColumnCenter, styles.flexCenter , {paddingTop:80} , styles.bg_White ,styles.Width_90]}>
                                 <Text style={[styles.textBold , styles.text_black , styles.textSize_15, styles.textCenter , styles.marginBottom_10 ]}>{ i18n.t('birthDate') }</Text>
 
-                               <View style={[styles.marginVertical_35]}>
+                               <View style={[styles.marginVertical_35, {marginBottom:190}]}>
 
                                    <TouchableOpacity onPress={showDatePicker} style={[styles.directionRow]}>
                                        <Text style={[styles.textBold , styles.text_black  , styles.textSize_14, styles.textCenter ]}>{ i18n.t('date') } :</Text>
@@ -126,14 +128,14 @@ function UpdateData({navigation}) {
 
                             </View>
 
-                            <View style={[styles.directionColumnCenter, styles.flexCenter, styles.marginTop_80]}>
+                            <View style={[styles.directionColumnCenter, styles.flexCenter , {paddingTop:80} , styles.bg_White ,styles.Width_90]}>
                                 <Text style={[styles.textBold , styles.text_black , styles.textSize_15, styles.textCenter , styles.marginBottom_10 ]}>{ i18n.t('whatName') }</Text>
 
-                                <View style={[styles.marginVertical_35]}>
+                                <View style={[styles.marginVertical_35 , {marginBottom:150}]}>
                                     <TouchableOpacity onPress={() => nameType(0)}>
                                         <Text style={[styles.textBold , name === 0 ? styles.text_black : styles.text_light_gray , styles.textSize_14, styles.textCenter ]}>{ i18n.t('longSpan') }</Text>
                                     </TouchableOpacity>
-                                    <View style={[styles.marginVertical_10 , styles.flexCenter,{borderWidth:.5 , borderColor: '#ddd' , width}]}/>
+                                    <View style={[styles.marginVertical_10 , styles.flexCenter,{borderWidth:.5 , borderColor: '#ddd' , width:width-38}]}/>
 
                                     <TouchableOpacity onPress={() => nameType(1)}>
                                         <Text style={[styles.textBold , name === 1 ? styles.text_black : styles.text_light_gray , styles.textSize_14, styles.textCenter ]}>{ i18n.t('longLife') }</Text>
@@ -142,19 +144,19 @@ function UpdateData({navigation}) {
 
                             </View>
 
-                            <View style={[styles.directionColumnCenter, styles.flexCenter, styles.marginTop_80 , {zIndex:10}]}>
+                            <View style={[styles.directionColumnCenter, styles.flexCenter , {paddingTop:80} , styles.bg_White ,styles.Width_90 ]}>
                                 <Text style={[styles.textBold , styles.text_black , styles.textSize_15, styles.textCenter , styles.marginBottom_10 ]}>{ i18n.t('howApp') }</Text>
 
                                 <View style={[styles.marginVertical_35]}>
                                     <TouchableOpacity onPress={() => howType(0)}>
                                         <Text style={[styles.textBold , knowApp === 0 ? styles.text_black : styles.text_light_gray , styles.textSize_14, styles.textCenter ]}>{ i18n.t("dontRemember") }</Text>
                                     </TouchableOpacity>
-                                    <View style={[styles.marginVertical_10 , styles.flexCenter,{borderWidth:.5 , borderColor: '#ddd' , width}]}/>
+                                    <View style={[styles.marginVertical_10 , styles.flexCenter,{borderWidth:.5 , borderColor: '#ddd' , width:width-38}]}/>
 
                                     <TouchableOpacity onPress={() => howType(1)}>
                                         <Text style={[styles.textBold , knowApp === 1 ? styles.text_black : styles.text_light_gray , styles.textSize_14, styles.textCenter ]}>{ i18n.t('internetAds') }</Text>
                                     </TouchableOpacity>
-                                    <View style={[styles.marginVertical_10 , styles.flexCenter,{borderWidth:.5 , borderColor: '#ddd' , width}]}/>
+                                    <View style={[styles.marginVertical_10 , styles.flexCenter,{borderWidth:.5 , borderColor: '#ddd' , width:width-38}]}/>
 
                                     <TouchableOpacity onPress={() => howType(2)}>
                                         <Text style={[styles.textBold , knowApp === 2 ? styles.text_black : styles.text_light_gray , styles.textSize_14, styles.textCenter ]}>{ i18n.t('socialInflu') }</Text>
@@ -164,7 +166,7 @@ function UpdateData({navigation}) {
 
                                 {
                                     swiperIndex == '3' ?
-                                        <TouchableOpacity onPress={() => navigation.navigate('more')} style={[styles.yellowBtn ,styles.SelfCenter ,{width:width -100 , marginTop:0}]}>
+                                        <TouchableOpacity onPress={() => navigation.navigate('more')} style={[styles.yellowBtn ,styles.SelfCenter, styles.marginBottom_35 ,{width:width -100 , marginTop:0}]}>
                                             <Text style={[styles.textBold , styles.text_black , styles.textSize_14]}>{ i18n.t('confirm') }</Text>
                                         </TouchableOpacity>
                                         :

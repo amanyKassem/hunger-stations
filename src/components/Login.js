@@ -145,7 +145,7 @@ function Login({navigation}) {
                         <KeyboardAvoidingView behavior={'padding'} style={[styles.keyboardAvoid]}>
                             <Form style={[styles.Width_100 , styles.flexCenter, styles.marginVertical_10]}>
                                 <View style={[styles.position_R, styles.height_70, styles.flexCenter, styles.marginBottom_5 ]}>
-                                    <Item floatingLabel style={[styles.item, styles.position_R, { right: 5 }]}>
+                                    <Item floatingLabel style={[styles.item]}>
                                         <Label style={[styles.label, styles.textRegular ,{ color:phoneStatus === 1 ?  COLORS.black :  COLORS.gray}]}>{ i18n.t('phone') }</Label>
                                         <Input style={[styles.input, styles.height_50, (phoneStatus === 1 ? styles.Active : styles.noActive)]}
                                                onChangeText={(phone) => setPhone(phone)}

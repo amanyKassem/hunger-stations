@@ -14,7 +14,6 @@ import {Container, Content, Form, Input, Item, Label, Toast} from 'native-base'
 import styles from '../../assets/styles'
 import i18n from "../../locale/i18n";
 import COLORS from "../consts/colors";
-import Communications from 'react-native-communications';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -84,10 +83,10 @@ function Account({navigation}) {
                     <View style={[styles.directionColumnSpace, styles.marginTop_15 , {flex:1}]}>
                         <View style={[styles.paddingHorizontal_20 , styles.Width_100]}>
                             <KeyboardAvoidingView behavior={'padding'} style={[styles.keyboardAvoid]}>
-                                <Form style={[styles.Width_100 , styles.flexCenter, styles.marginVertical_10]}>
+                                <Form style={[styles.Width_90 , styles.flexCenter, styles.marginVertical_10]}>
 
                                     <View style={[styles.position_R, styles.height_70, styles.flexCenter, styles.marginBottom_5 ]}>
-                                        <Item floatingLabel style={[styles.item, styles.position_R, { right: 5 }]}>
+                                        <Item floatingLabel style={[styles.item]}>
                                             <Label style={[styles.label, styles.textRegular ,{ color:nameStatus === 1 ?  COLORS.black :  COLORS.gray , top:5}]}>{ i18n.t('name') }</Label>
                                             <Input style={[styles.input, styles.height_50, (nameStatus === 1 ? styles.Active : styles.noActive)]}
                                                    onChangeText={(name) => setName(name)}
@@ -99,7 +98,7 @@ function Account({navigation}) {
                                     </View>
 
                                     <View style={[styles.position_R, styles.height_70, styles.flexCenter, styles.marginBottom_5 ]}>
-                                        <Item floatingLabel style={[styles.item, styles.position_R, { right: 5 }]}>
+                                        <Item floatingLabel style={[styles.item]}>
                                             <Label style={[styles.label, styles.textRegular ,{ color:phoneStatus === 1 ?  COLORS.black :  COLORS.gray , top:5}]}>{ i18n.t('phone') }</Label>
                                             <Input style={[styles.input, styles.height_50, (phoneStatus === 1 ? styles.Active : styles.noActive)]}
                                                    onChangeText={(phone) => setPhone(phone)}
@@ -112,7 +111,7 @@ function Account({navigation}) {
                                     </View>
 
                                     <View style={[styles.position_R, styles.height_70, styles.flexCenter, styles.marginBottom_5 ]}>
-                                        <Item floatingLabel style={[styles.item, styles.position_R, { right: 5 }]}>
+                                        <Item floatingLabel style={[styles.item]}>
                                             <Label style={[styles.label, styles.textRegular ,{ color:emailStatus === 1 ?  COLORS.black :  COLORS.gray , top:5}]}>{ i18n.t('email') }</Label>
                                             <Input style={[styles.input, styles.height_50, (emailStatus === 1 ? styles.Active : styles.noActive)]}
                                                    onChangeText={(email) => setEmail(email)}

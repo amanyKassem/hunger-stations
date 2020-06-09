@@ -977,7 +977,8 @@ const styles = ({
         top: -20,
         marginTop: 0,
         width:'100%',
-        paddingHorizontal: 10,
+        paddingLeft:0,
+        marginLeft:0,
         zIndex : -1,
     },
     label : {

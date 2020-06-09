@@ -78,7 +78,7 @@ function Voucher({navigation}) {
                                 <Form style={[styles.Width_100 , styles.flexCenter, styles.marginVertical_10]}>
 
                                     <View style={[styles.position_R, styles.height_70, styles.flexCenter, styles.marginBottom_5 ]}>
-                                        <Item floatingLabel style={[styles.item, styles.position_R, { right: 5 }]}>
+                                        <Item floatingLabel style={[styles.item]}>
                                             <Label style={[styles.label, styles.textRegular ,{ color:couponStatus === 1 ?  COLORS.black :  COLORS.gray , top:5}]}>{ i18n.t('couponCode') }</Label>
                                             <Input style={[styles.input, styles.height_50, (couponStatus === 1 ? styles.Active : styles.noActive)]}
                                                    onChangeText={(couponCode) => setCoupon(couponCode)}

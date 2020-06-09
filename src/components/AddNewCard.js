@@ -95,7 +95,7 @@ function AddNewCard({navigation}) {
                         <Form style={[styles.marginVertical_10, styles.Width_100 , styles.directionColumnSpace , {flex:1}]}>
                             <View style={[styles.Width_100 , styles.flexCenter]}>
                                 <View style={[styles.position_R, styles.height_70, styles.flexCenter, styles.marginBottom_5 , styles.marginTop_25 ]}>
-                                    <Item floatingLabel style={[styles.item, styles.position_R , { right: 7 ,paddingHorizontal:0}]}>
+                                    <Item floatingLabel style={[styles.item]}>
                                         <Label style={[styles.label,{ color:cardNumberStatus === 1 ?  COLORS.black :  COLORS.gray}]}>{ i18n.t('cardNumber') }</Label>
                                         <Input style={[styles.input, styles.height_50, (cardNumberStatus === 1 ? styles.Active : styles.noActive)]}
                                                onChangeText={(cardNumber) => setCardNumber(cardNumber)}
@@ -107,7 +107,7 @@ function AddNewCard({navigation}) {
                                 </View>
 
                                 <View style={[styles.position_R,  styles.height_70, styles.flexCenter, styles.marginBottom_5]}>
-                                    <Item floatingLabel style={[styles.item, styles.position_R, { right: 7 ,paddingHorizontal:0}]}>
+                                    <Item floatingLabel style={[styles.item, styles.position_R]}>
                                         <Label style={[styles.label ,{ color:cardHolderStatus === 1 ?  COLORS.black :  COLORS.gray }]}>{ i18n.t('name') }</Label>
                                         <Input
                                             style={[styles.input, styles.height_50, (cardHolderStatus === 1 ? styles.Active : styles.noActive)]}
@@ -137,7 +137,7 @@ function AddNewCard({navigation}) {
                                     </TouchableOpacity>
 
                                     <View style={[styles.position_R,  styles.height_70, styles.flexCenter, styles.marginBottom_5, {flex:1 , marginLeft:12}]}>
-                                        <Item floatingLabel style={[styles.item, styles.position_R, { right: 7 ,paddingHorizontal:0}]}>
+                                        <Item floatingLabel style={[styles.item, styles.position_R]}>
                                             <Label style={[styles.label ,{ color:cvvStatus === 1 ?  COLORS.black :  COLORS.gray }]}>{ i18n.t('cvv') }</Label>
                                             <Input
                                                 style={[styles.input, styles.height_50, (cvvStatus === 1 ? styles.Active : styles.noActive)]}
